@@ -69,7 +69,10 @@ export default function CouponContent(props) {
 
   const isLightColor = useMemo(() => {
     let hslColor = convert.hex.hsl(color);
-    return hslColor[2] > 55 || false;
+    if (hslColor) {
+      return hslColor[2] > 55 || false;
+    }
+    return false;
   }, [color]);
 
   const infoTextColor = useMemo(() => {
