@@ -1,0 +1,83 @@
+.coupon-div {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    border: 2px solid black;
+    -webkit-mask: radial-gradient(circle at center top, black 30px, transparent 131px) top,
+        radial-gradient(circle at center bottom, transparent 30px, black 31px) bottom;
+    -webkit-mask-size: 100% 51%;
+    /* each one half the size */
+    -webkit-mask-repeat: no-repeat;
+    /* don't forget this */
+}
+
+
+.test {
+    width: 200px;
+    height: 200px;
+    /* background-color: brown; */
+    background: radial-gradient(circle at center top, transparent 30px, black 31px);
+}
+
+.coupon-svg {
+    width: auto;
+    height: auto;
+}
+
+.pathQWQ {
+    /* fill: none; */
+    stroke: #646464;
+    stroke-width: 1px;
+    /* stroke-dasharray: 2,2; */
+    /* stroke-linejoin: round; */
+}
+
+#example_1 {
+    filter:
+        drop-shadow(-1px -1px 0px #3e68ff) drop-shadow(1px -1px 0px #3e68ff) drop-shadow(1px 1px 0px #3e68ff) drop-shadow(-1px 1px 0px #3e68ff)
+}
+
+.coupon-product-info-container {
+    width: 132px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    padding-left: 8px;
+}
+
+.coupon-product-info-container>span {
+    width: 100%;
+    text-align: left;
+    line-height: 1.05rem;
+    gap: "2px";
+}
+
+.coupon-discount-info-container {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #366F94;
+    color: white;
+    gap: 2px;
+}
+
+.coupon-content-container {
+    /* box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.15); */
+    filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.1));
+    width: 100%;
+    height: 100%;
+}
+
+.coupon-content {
+    background-color: white;
+    clip-path: path('M192.272 0H198.719H205.166H320V4.5C318.343 4.5 317 5.84315 317 7.5C317 9.15685 318.343 10.5 320 10.5V14.5C318.343 14.5 317 15.8431 317 17.5C317 19.1569 318.343 20.5 320 20.5V24.5C318.343 24.5 317 25.8431 317 27.5C317 29.1569 318.343 30.5 320 30.5V34.5C318.343 34.5 317 35.8431 317 37.5C317 39.1569 318.343 40.5 320 40.5V44.5C318.343 44.5 317 45.8431 317 47.5C317 49.1569 318.343 50.5 320 50.5V54.5C318.343 54.5 317 55.8431 317 57.5C317 59.1569 318.343 60.5 320 60.5V64.5C318.343 64.5 317 65.8431 317 67.5C317 69.1569 318.343 70.5 320 70.5V74.5C318.343 74.5 317 75.8431 317 77.5C317 79.1569 318.343 80.5 320 80.5V85H205.166H198.719H192.272H0V80.5C1.65685 80.5 3 79.1569 3 77.5C3 75.8431 1.65685 74.5 0 74.5V70.5C1.65685 70.5 3 69.1569 3 67.5C3 65.8431 1.65685 64.5 0 64.5V60.5C1.65685 60.5 3 59.1569 3 57.5C3 55.8431 1.65685 54.5 0 54.5V50.5C1.65685 50.5 3 49.1569 3 47.5C3 45.8431 1.65685 44.5 0 44.5V40.5C1.65685 40.5 3 39.1569 3 37.5C3 35.8431 1.65685 34.5 0 34.5V30.5C1.65685 30.5 3 29.1569 3 27.5C3 25.8431 1.65685 24.5 0 24.5V20.5C1.65685 20.5 3 19.1569 3 17.5C3 15.8431 1.65685 14.5 0 14.5V10.5C1.65685 10.5 3 9.15685 3 7.5C3 5.84315 1.65685 4.5 0 4.5V0H192.272Z')
+}
