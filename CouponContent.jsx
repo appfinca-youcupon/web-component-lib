@@ -108,7 +108,7 @@ export default function CouponContent(props) {
   }, [priceFormatted, originPriceFormatted]);
 
   const formattedExpiration = useMemo(() => {
-    return dayjs(expirationTimestamp).format("YYYY/MM/DD");
+    return dayjs(expirationTimestamp).format("MMM DD, YYYY");
   }, [expirationTimestamp]);
 
   const { contentHeight, contentWidth, imageWidth, discountWidth } =
