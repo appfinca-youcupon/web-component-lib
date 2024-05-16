@@ -12,7 +12,7 @@ message="$(git log -1 --pretty=%B)"
 echo last commit message: $message
 cp src/coupon/* web-components
 cd web-components
-ls
+ls .git
 
 # Ensure no existing lock file
 if [ -f .git/index.lock ]; then
