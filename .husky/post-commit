@@ -18,6 +18,7 @@ echo last commit message: $message
 cp src/coupon/* web-components
 cd web-components
 ls
+git status || handle_error "Failed to get git status"
 # git add -A
 # git commit -m "$message"
 # git push origin components
