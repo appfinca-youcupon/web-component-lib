@@ -99,8 +99,8 @@ export default function CouponContent(props) {
       size === "lg"
         ? MAX_PRICES_LENGTH_LG
         : size === "md"
-        ? MAX_PRICES_LENGTH_MD
-        : MAX_PRICES_LENGTH_SM;
+          ? MAX_PRICES_LENGTH_MD
+          : MAX_PRICES_LENGTH_SM;
     return (
       (priceFormatted?.length ?? 0) + (originPriceFormatted?.length ?? 0) >
       maxLength
@@ -121,18 +121,18 @@ export default function CouponContent(props) {
             discountWidth: DISCOUNT_WIDTH_LG,
           }
         : size === "md"
-        ? {
-            contentHeight: CONTENT_HEIGHT_MD,
-            contentWidth: CONTENT_WIDTH_MD,
-            imageWidth: IMAGE_WIDTH_MD,
-            discountWidth: DISCOUNT_WIDTH_MD,
-          }
-        : {
-            contentHeight: CONTENT_HEIGHT_SM,
-            contentWidth: CONTENT_WIDTH_SM,
-            imageWidth: IMAGE_WIDTH_SM,
-            discountWidth: DISCOUNT_WIDTH_SM,
-          };
+          ? {
+              contentHeight: CONTENT_HEIGHT_MD,
+              contentWidth: CONTENT_WIDTH_MD,
+              imageWidth: IMAGE_WIDTH_MD,
+              discountWidth: DISCOUNT_WIDTH_MD,
+            }
+          : {
+              contentHeight: CONTENT_HEIGHT_SM,
+              contentWidth: CONTENT_WIDTH_SM,
+              imageWidth: IMAGE_WIDTH_SM,
+              discountWidth: DISCOUNT_WIDTH_SM,
+            };
     }, [size]);
 
   const fontSize = size === "lg" ? "16px" : size === "md" ? "14px" : "10px";
