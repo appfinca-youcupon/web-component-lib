@@ -13,9 +13,10 @@ echo last commit message: $message
 cp src/coupon/* web-components
 cd web-components
 
+echo "commiting submodule..."
 # env -i git status || handle_error "Failed to get git status"
-env -i git add -A
-env -i git commit -m "update from master: $message"
+env -i git add -A  || handle_error "Failed to add"
+env -i git commit -m "update from master: $message"  || handle_error "Failed to commit"
 # git push origin components
 
 echo "post-commit hook complete!"
