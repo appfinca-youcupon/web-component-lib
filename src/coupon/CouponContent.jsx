@@ -52,7 +52,7 @@ export default function CouponContent(props) {
     productName,
     price,
     originPrice,
-    color,
+    color = "#878787",
     discountType = "percentage",
     discountValue = 5,
     expirationTimestamp = 0,
@@ -102,8 +102,8 @@ export default function CouponContent(props) {
       size === "lg"
         ? MAX_PRICES_LENGTH_LG
         : size === "md"
-        ? MAX_PRICES_LENGTH_MD
-        : MAX_PRICES_LENGTH_SM;
+          ? MAX_PRICES_LENGTH_MD
+          : MAX_PRICES_LENGTH_SM;
     return (
       (priceFormatted?.length ?? 0) + (originPriceFormatted?.length ?? 0) >
       maxLength
@@ -145,20 +145,20 @@ export default function CouponContent(props) {
             padding: PADDING_LG,
           }
         : size === "md"
-        ? {
-            contentHeight: CONTENT_HEIGHT_MD,
-            contentWidth: CONTENT_WIDTH_MD,
-            imageWidth: IMAGE_WIDTH_MD,
-            discountWidth: DISCOUNT_WIDTH_MD,
-            padding: PADDING_MD,
-          }
-        : {
-            contentHeight: CONTENT_HEIGHT_SM,
-            contentWidth: CONTENT_WIDTH_SM,
-            imageWidth: IMAGE_WIDTH_SM,
-            discountWidth: DISCOUNT_WIDTH_SM,
-            padding: PADDING_SM,
-          };
+          ? {
+              contentHeight: CONTENT_HEIGHT_MD,
+              contentWidth: CONTENT_WIDTH_MD,
+              imageWidth: IMAGE_WIDTH_MD,
+              discountWidth: DISCOUNT_WIDTH_MD,
+              padding: PADDING_MD,
+            }
+          : {
+              contentHeight: CONTENT_HEIGHT_SM,
+              contentWidth: CONTENT_WIDTH_SM,
+              imageWidth: IMAGE_WIDTH_SM,
+              discountWidth: DISCOUNT_WIDTH_SM,
+              padding: PADDING_SM,
+            };
     }, [size]);
 
   const fontSize = size === "lg" ? "16px" : size === "md" ? "14px" : "10px";
