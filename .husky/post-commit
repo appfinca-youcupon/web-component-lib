@@ -1,7 +1,25 @@
 #!/usr/bin/env sh
 
+# Function to handle errors
+handle_error() {
+  echo "Error: $1"
+  exit 1
+}
+
 echo "executing post-commit hook..."
+
+# Ensure no existing lock file
+if [ -f .git/index.lock ]; then
+  rm -f .git/index.lock || handle_error "Failed to remove existing lock file"
+fi
+
+message="$(git log -1 --pretty=%B)"
+echo last commit message: $message
 cp src/coupon/* web-components
 cd web-components
 ls
-echo "post-commit hook complete!"s
+# git add -A
+# git commit -m "$message"
+# git push origin components
+
+echo "post-commit hook complete!"
