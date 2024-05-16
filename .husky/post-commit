@@ -13,6 +13,7 @@ echo last commit message: $message
 cp src/coupon/* web-components
 cd web-components
 cat .git
+unset GIT_DIR
 
 # Ensure no existing lock file
 # if [ -f .git/index.lock ]; then
