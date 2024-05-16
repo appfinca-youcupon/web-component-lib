@@ -14,7 +14,8 @@ cp src/coupon/* web-components
 cd web-components
 
 # env -i git status || handle_error "Failed to get git status"
-env -i git add -A && git commit -m "update from master: $message"
+env -i git add -A
+# git commit -m "update from master: $message"
 # git push origin components
 
 echo "post-commit hook complete!"
