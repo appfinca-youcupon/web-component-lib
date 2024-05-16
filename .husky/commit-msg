@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "${0%/*}/h"
+
+echo "trigger commit-msg"
+
+message="$(cat $1)"
+echo \"Recived message '------->' $message \" 
+exit 1

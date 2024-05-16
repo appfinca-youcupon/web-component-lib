@@ -1,1 +1,7 @@
-echo "complete"
+#!/usr/bin/env sh
+
+echo "executing post-commit hook..."
+cp src/coupon/* web-components
+cd web-components
+ls
+echo "post-commit hook complete!"s
