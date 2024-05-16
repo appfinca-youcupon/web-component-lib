@@ -20,8 +20,8 @@ unset GIT_DIR
 #   rm -f .git/index.lock || handle_error "Failed to remove existing lock file"
 # fi
 
-# git status || handle_error "Failed to get git status"
-git add -A
+git status || handle_error "Failed to get git status"
+# git add -A
 # git commit -m "$message"
 # git push origin components
 
