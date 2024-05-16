@@ -8,16 +8,17 @@ handle_error() {
 
 echo "executing post-commit hook..."
 
-# Ensure no existing lock file
-if [ -f .git/index.lock ]; then
-  rm -f .git/index.lock || handle_error "Failed to remove existing lock file"
-fi
-
 message="$(git log -1 --pretty=%B)"
 echo last commit message: $message
 cp src/coupon/* web-components
 cd web-components
 ls
+
+# Ensure no existing lock file
+if [ -f .git/index.lock ]; then
+  rm -f .git/index.lock || handle_error "Failed to remove existing lock file"
+fi
+
 git status || handle_error "Failed to get git status"
 # git add -A
 # git commit -m "$message"
