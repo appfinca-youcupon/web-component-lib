@@ -1,0 +1,4 @@
+[submodule "components"]
+	path = web-components
+	url = http://localhost:33000/software/youcaptcha/web-components
+	branch = components
