@@ -1,4 +1,4 @@
-import CouponLg from "./CouponLg";
+import CouponLg from "./coupon/CouponLg";
 
 const dummy = {
   domain: "datastore88.myshopify.com",
