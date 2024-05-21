@@ -16,6 +16,7 @@ function App() {
       <h1>YouCupon Components</h1>
       <div>
         <CouponLg {...dummy} />
+        <CouponLg {...dummy} />
       </div>
     </>
   );

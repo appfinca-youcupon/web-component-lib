@@ -1,4 +1,8 @@
-import CouponLg from "../../web-components/CouponLg";
+import CouponLg from "./CouponLg";
+import CouponLgNew from "./CouponLgNew";
+import CouponMd from "./CouponMd";
+import CouponSm from "./CouponSm";
+import CouponSvg from "./CouponSvg";
 import PropTypes from "prop-types";
 
 export const dummyCouponData = {
@@ -9,6 +13,8 @@ export const dummyCouponData = {
   originPrice: "400",
   color: "#005090",
   expiration: "Oct 12, 2023",
+  discountType: "percentage",
+  discountValue: 5,
 };
 
 /**
@@ -28,7 +34,15 @@ export const dummyCouponData = {
  * }} props
  */
 export default function Coupon(props) {
-  return <CouponLg {...props} />;
+  const { size } = props;
+  return <CouponLgNew {...props} />;
+  // return size === "sm" ? (
+  //   <CouponSm {...props} />
+  // ) : size === "md" ? (
+  //   <CouponMd {...props} />
+  // ) : (
+  //   <CouponLg {...props} />
+  // );
 }
 
 Coupon.propTypes = {
