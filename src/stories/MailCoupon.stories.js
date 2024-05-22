@@ -1,17 +1,17 @@
 import { fn } from "@storybook/test";
 import CouponLg from "../../web-components/CouponLg";
-import Coupon from "../coupon/Coupon";
+import MailCoupon from "../coupon/MailCoupon";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
-  title: "YouCupon/Coupon",
-  component: Coupon,
+  title: "YouCupon/MailCoupon",
+  component: MailCoupon,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
     docs: {
       description: {
-        component: "YouCupon coupon component",
+        component: "YouCupon coupon component for email notification",
       },
     },
   },
@@ -30,26 +30,8 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Lg = {
   args: {
-    ...Coupon.defaultProps,
+    ...MailCoupon.defaultProps,
     productName: "Test Product LG",
-    // primary: true,
-    // label: "Button",
-  },
-};
-
-export const Md = {
-  args: {
-    ...Coupon.defaultProps,
-    size: "md",
-    // primary: true,
-    // label: "Button",
-  },
-};
-
-export const Sm = {
-  args: {
-    ...Coupon.defaultProps,
-    size: "sm",
     // primary: true,
     // label: "Button",
   },

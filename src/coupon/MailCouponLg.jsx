@@ -486,11 +486,9 @@ const CouponRight = (props) => {
  *    discountType: ("value"|"percentage")
  *    color: string
  *    url: string
- *    outline: boolean
- *    shadow: boolean
  * }} props
  */
-export default function CouponLgNew(props) {
+export default function MailCouponLg(props) {
   return (
     // TODO: example size
     <div>
@@ -502,9 +500,9 @@ export default function CouponLgNew(props) {
           flexDirection: "row",
         }}
       >
-        <CouponLeft {...props} />
-        <CouponCenter {...props} />
-        <CouponRight {...props} />
+        <CouponLeft {...props} size="lg" />
+        <CouponCenter {...props} size="lg" />
+        <CouponRight {...props} size="lg" />
       </div>
     </div>
   );

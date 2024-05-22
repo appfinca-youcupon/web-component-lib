@@ -1,4 +1,5 @@
 import CouponLg from "./coupon/CouponLg";
+import Coupon from "./coupon/Coupon";
 
 const dummy = {
   domain: "datastore88.myshopify.com",
@@ -13,10 +14,12 @@ const dummy = {
 function App() {
   return (
     <>
-      <h1>YouCupon Components</h1>
+      <h1>YouCupon Components Preview</h1>
       <div>
         <CouponLg {...dummy} />
         <CouponLg {...dummy} />
+        <Coupon {...dummy} />
+        <Coupon />
       </div>
     </>
   );

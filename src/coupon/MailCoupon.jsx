@@ -1,9 +1,4 @@
-import CouponLg from "./CouponLg";
-import CouponLgNew from "./CouponLgNew";
-import CouponMdNew from "./CouponMdNew";
-import CouponMd from "./CouponMd";
-import CouponSm from "./CouponSm";
-import CouponSvg from "./CouponSvg";
+import MailCouponLg from "./MailCouponLg";
 import PropTypes from "prop-types";
 
 export const dummyCouponData = {
@@ -29,14 +24,11 @@ export const dummyCouponData = {
  *    discountType: ("value"|"percentage")
  *    color: string
  *    url: string
- *    outline: boolean
- *    shadow: boolean
- *    size: ("sm"|"md"|"lg")
  * }} props
  */
-export default function Coupon(props) {
+export default function MailCoupon(props) {
   const { size } = props;
-  return <CouponLgNew {...props} />;
+  return <MailCouponLg {...props} />;
   // return <CouponMdNew {...props} />;
   // return size === "sm" ? (
   //   <CouponSm {...props} />
@@ -48,7 +40,7 @@ export default function Coupon(props) {
 }
 
 // NOTE: isRequired will only be shown if no default value
-Coupon.propTypes = {
+MailCoupon.propTypes = {
   imgUrl: PropTypes.string,
   productName: PropTypes.string.isRequired,
   price: PropTypes.number,
@@ -58,12 +50,9 @@ Coupon.propTypes = {
   discountType: PropTypes.oneOf(["value", "percentage"]),
   color: PropTypes.string,
   url: PropTypes.string,
-  outline: PropTypes.bool,
-  shadow: PropTypes.bool,
-  size: PropTypes.oneOf(["sm", "md", "lg"]),
 };
 
-Coupon.defaultProps = {
+MailCoupon.defaultProps = {
   imgUrl: dummyCouponData.imgUrl,
   productName: dummyCouponData.productName,
   price: dummyCouponData.price,
@@ -73,7 +62,4 @@ Coupon.defaultProps = {
   discountType: dummyCouponData.discountType,
   color: dummyCouponData.color,
   url: "",
-  outline: true,
-  shadow: false,
-  size: "lg",
 };
