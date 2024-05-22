@@ -462,7 +462,6 @@ const CouponRight = (props) => {
   return (
     <CouponBackgroungSvg2
       align="right"
-      color={props.color}
       style={{
         display: "flex",
         justifyContent: "center",
@@ -490,14 +489,14 @@ const CouponRight = (props) => {
  *    shadow: boolean
  * }} props
  */
-export default function CouponLgNew(props) {
+export default function CouponMdNew(props) {
   return (
     // TODO: example size
     <div>
       <div
         style={{
-          width: "400px",
-          height: "120px",
+          width: "300px",
+          height: "80px",
           display: "flex",
           flexDirection: "row",
         }}
