@@ -3,7 +3,6 @@ import CouponLgNew from "./CouponLgNew";
 import CouponMdNew from "./CouponMdNew";
 import CouponMd from "./CouponMd";
 import CouponSm from "./CouponSm";
-import CouponSvg from "./CouponSvg";
 import PropTypes from "prop-types";
 
 export const dummyCouponData = {

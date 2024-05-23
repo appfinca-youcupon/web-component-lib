@@ -1,5 +1,4 @@
 import dayjs from "dayjs";
-import styles from "./Coupon.module.css";
 import { useMemo } from "react";
 import convert from "color-convert";
 

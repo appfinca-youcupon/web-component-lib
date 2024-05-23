@@ -331,7 +331,7 @@ const CouponDiscountSection = ({
  *   style: any
  * }} props
  */
-const CouponBackgroungSvg2 = (props) => {
+const CouponBackgroungSvg = (props) => {
   let { align, color = "#878787" } = props;
   if (align !== "right" && align !== "center") {
     align = "left";
@@ -414,7 +414,7 @@ const CouponBackgroungPng = (props) => {
 
 const CouponLeft = (props) => {
   return (
-    <CouponBackgroungSvg2
+    <CouponBackgroungSvg
       align="left"
       style={{
         display: "flex",
@@ -429,13 +429,13 @@ const CouponLeft = (props) => {
       >
         <CouponImage imgUrl="https://i.imgur.com/SUeDv6E.jpg" size="lg" />
       </div>
-    </CouponBackgroungSvg2>
+    </CouponBackgroungSvg>
   );
 };
 
 const CouponCenter = (props) => {
   return (
-    <CouponBackgroungSvg2
+    <CouponBackgroungSvg
       align="center"
       color="#ffffff"
       style={{
@@ -454,13 +454,13 @@ const CouponCenter = (props) => {
         <CouponProductSection {...props} />
         {/* <StampDiv {...props} /> */}
       </div>
-    </CouponBackgroungSvg2>
+    </CouponBackgroungSvg>
   );
 };
 
 const CouponRight = (props) => {
   return (
-    <CouponBackgroungSvg2
+    <CouponBackgroungSvg
       align="right"
       style={{
         display: "flex",
@@ -470,7 +470,7 @@ const CouponRight = (props) => {
       }}
     >
       <CouponDiscountSection {...props} />
-    </CouponBackgroungSvg2>
+    </CouponBackgroungSvg>
   );
 };
 
