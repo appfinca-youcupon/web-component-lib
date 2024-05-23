@@ -1,30 +1,94 @@
-import dayjs from "dayjs";
 import { useMemo } from "react";
+import { renderToString } from "react-dom/server";
+import svgToMiniDataURI from "mini-svg-data-uri";
+import dayjs from "dayjs";
 import convert from "color-convert";
 
-// SM: 190x50
+// SM: 190x50 (190~300)
 const CONTENT_HEIGHT_SM = 50;
 const IMAGE_WIDTH_SM = 50;
 const CONTENT_WIDTH_SM = 75;
 const DISCOUNT_WIDTH_SM = 65;
+const CONTENT_WIDTH_SM_MIN = CONTENT_WIDTH_SM - 5;
+const DISCOUNT_WIDTH_SM_MIN = DISCOUNT_WIDTH_SM - 10;
 const MAX_PRICES_LENGTH_SM = 10;
 const PADDING_SM = 2;
 
-// MD: 320x85
+// MD: 320x85 (280~400)
 const CONTENT_HEIGHT_MD = 85;
 const IMAGE_WIDTH_MD = 85;
 const CONTENT_WIDTH_MD = 125;
 const DISCOUNT_WIDTH_MD = 110;
+const CONTENT_WIDTH_MD_MIN = CONTENT_WIDTH_MD - 25;
+const DISCOUNT_WIDTH_MD_MIN = DISCOUNT_WIDTH_MD - 20;
 const MAX_PRICES_LENGTH_MD = 12;
 const PADDING_MD = 4;
 
-// LG: 400x120
+// LG: 400x120 (320~520)
 const CONTENT_HEIGHT_LG = 120;
 const IMAGE_WIDTH_LG = 120;
 const CONTENT_WIDTH_LG = 150;
 const DISCOUNT_WIDTH_LG = 130;
+const CONTENT_WIDTH_LG_MIN = CONTENT_WIDTH_LG - 50;
+const DISCOUNT_WIDTH_LG_MIN = DISCOUNT_WIDTH_LG - 45;
 const MAX_PRICES_LENGTH_LG = 13;
 const PADDING_LG = 12;
+
+const couponProductInfoContainerStyle = {
+  display: "flex",
+  flexDirection: "column",
+  flexGrow: 1,
+  justifyContent: "center",
+  alignItems: "center",
+  textAlign: "center",
+  paddingLeft: "8px",
+  paddingRight: "8px",
+  //   gradient
+  //   background:
+  //     "linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 10%)",
+  //   paddingLeft: "24px",
+  //   marginLeft: "-16px",
+};
+
+const couponProductNameSpanStyle = {
+  width: "100%",
+  textAlign: "left",
+  gap: "2px",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  whiteSpace: "normal",
+  display: "-webkit-box",
+  WebkitLineClamp: 3,
+  WebkitBoxOrient: "vertical", //TODO: deprecated
+};
+
+const couponProductNameSpanStyles = {
+  lg: {
+    ...couponProductNameSpanStyle,
+    WebkitLineClamp: 3,
+  },
+  md: {
+    ...couponProductNameSpanStyle,
+    WebkitLineClamp: 3,
+  },
+  sm: {
+    ...couponProductNameSpanStyle,
+    WebkitLineClamp: 2,
+  },
+};
+
+const couponDiscountInfoContainerStyle = {
+  //   width: "150px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  textAlign: "center",
+  color: "white",
+  gap: "2px",
+  paddingRight: "8px",
+  paddingLeft: "4px",
+};
 
 const getSizeVariables = (size) => {
   return size === "lg"
@@ -34,6 +98,8 @@ const getSizeVariables = (size) => {
         imageWidth: IMAGE_WIDTH_LG,
         discountWidth: DISCOUNT_WIDTH_LG,
         padding: PADDING_LG,
+        contentWidthMin: CONTENT_WIDTH_LG_MIN,
+        discountWidthMin: DISCOUNT_WIDTH_LG_MIN,
       }
     : size === "md"
       ? {
@@ -42,6 +108,8 @@ const getSizeVariables = (size) => {
           imageWidth: IMAGE_WIDTH_MD,
           discountWidth: DISCOUNT_WIDTH_MD,
           padding: PADDING_MD,
+          contentWidthMin: CONTENT_WIDTH_MD_MIN,
+          discountWidthMin: DISCOUNT_WIDTH_MD_MIN,
         }
       : {
           contentHeight: CONTENT_HEIGHT_SM,
@@ -49,6 +117,8 @@ const getSizeVariables = (size) => {
           imageWidth: IMAGE_WIDTH_SM,
           discountWidth: DISCOUNT_WIDTH_SM,
           padding: PADDING_SM,
+          contentWidthMin: CONTENT_WIDTH_SM_MIN,
+          discountWidthMin: DISCOUNT_WIDTH_SM_MIN,
         };
 };
 
@@ -58,23 +128,24 @@ const getSizeVariables = (size) => {
  *  imgUrl: string
  * }} props
  */
-const CouponImage = ({ size, imgUrl }) => {
+export const CouponImage = ({ size, imgUrl }) => {
   const { contentHeight, contentWidth, imageWidth, discountWidth, padding } =
     useMemo(() => {
       return getSizeVariables(size);
     }, [size]);
   return (
     <div
-      className={styles["coupon-image-container"]}
       style={{
-        width: imageWidth,
-        minWidth: imageWidth,
-        height: contentHeight,
+        // width: imageWidth,
+        // minWidth: imageWidth,
+        // height: contentHeight,
+        maxWidth: imageWidth - padding * 2,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         paddingLeft: `${0}px`,
         paddingTop: `${0}px`,
+        margin: "8px 0 8px 8px",
       }}
     >
       <img
@@ -84,8 +155,9 @@ const CouponImage = ({ size, imgUrl }) => {
           // maxWidth: imageWidth,
           // maxHeight: contentHeight,
           // scale to fill
-          width: imageWidth - padding * 2,
-          height: contentHeight - padding * 2,
+          //   width: imageWidth - padding * 2,
+          //   height: contentHeight - padding * 2,
+          width: "100%",
           objectFit: "cover",
         }}
       />
@@ -93,11 +165,35 @@ const CouponImage = ({ size, imgUrl }) => {
   );
 };
 
-const CouponProductSection = ({ productName, originPrice, price, size }) => {
-  const { contentHeight, contentWidth, imageWidth, discountWidth, padding } =
-    useMemo(() => {
-      return getSizeVariables(size);
-    }, [size]);
+export const StampDiv = ({ size, shop = "MyShop" }) => {
+  return size == "lg" ? (
+    <div
+      style={{
+        position: "absolute",
+        left: "8px",
+        bottom: "2px",
+        fontSize: "10px",
+        padding: "2px",
+        backgroundColor: "transparent",
+        color: "#878787",
+      }}
+    >
+      <span>{`${shop} • YouCupon`}</span>
+    </div>
+  ) : (
+    <></>
+  );
+};
+
+export const CouponProductSection = ({
+  productName,
+  originPrice,
+  price,
+  size,
+}) => {
+  const { contentHeight, contentWidthMin } = useMemo(() => {
+    return getSizeVariables(size);
+  }, [size]);
 
   const priceFormatted = useMemo(() => {
     return `$${price}`;
@@ -120,35 +216,21 @@ const CouponProductSection = ({ productName, originPrice, price, size }) => {
     );
   }, [priceFormatted, originPriceFormatted]);
 
-  const stampDiv = useMemo(() => {
-    return size == "lg" ? (
-      <div
-        style={{
-          position: "absolute",
-          left: "8px",
-          top: "2px",
-          fontSize: "10px",
-          padding: "2px",
-          backgroundColor: "transparent",
-          color: "#878787",
-        }}
-      >
-        <span>MyShop • YouCupon</span>
-      </div>
-    ) : (
-      <></>
-    );
-  }, [size]);
-
   return (
     <div
-      className={styles["coupon-product-info-container-gradient"]}
+      //   className={styles["coupon-product-info-container-gradient"]}
       style={{
-        width: contentWidth,
+        ...couponProductInfoContainerStyle,
+        // width: contentWidth,
+        minWidth: contentWidthMin,
       }}
     >
-      {stampDiv}
-      <span className={styles["coupon-product-name-span-" + size]}>
+      <span
+        //   className={styles["coupon-product-name-span-" + size]}
+        style={{
+          ...couponProductNameSpanStyles[size],
+        }}
+      >
         {productName}
       </span>
       <div
@@ -176,17 +258,16 @@ const CouponProductSection = ({ productName, originPrice, price, size }) => {
   );
 };
 
-const CouponDiscountSection = ({
+export const CouponDiscountSection = ({
   size,
   color,
   discountValue,
   discountType,
   expirationTimestamp,
 }) => {
-  const { contentHeight, contentWidth, imageWidth, discountWidth, padding } =
-    useMemo(() => {
-      return getSizeVariables(size);
-    }, [size]);
+  const { contentHeight, discountWidthMin } = useMemo(() => {
+    return getSizeVariables(size);
+  }, [size]);
 
   const formattedExpiration = useMemo(() => {
     return dayjs(expirationTimestamp).format("MMM DD, YYYY");
@@ -212,10 +293,13 @@ const CouponDiscountSection = ({
 
   return (
     <div
-      className={`${styles["coupon-discount-info-container"]}`}
+      //   className={`${styles["coupon-discount-info-container"]}`}
       style={{
-        width: discountWidth,
-        background: color,
+        ...couponDiscountInfoContainerStyle,
+        // width: discountWidth,
+        minWidth: discountWidthMin,
+        height: contentHeight,
+        // background: color,
         color: infoTextColor,
       }}
     >
@@ -244,83 +328,3 @@ const CouponDiscountSection = ({
     </div>
   );
 };
-
-/**
- * @param {{
- *    imgUrl: string,
- *    productName: string,
- *    price: number,
- *    originPrice: number,
- *    expirationTimestamp: number,
- *    discountValue: number,
- *    discountType: ("value"|"percentage")
- *    color: string
- *    url: string
- *    outline: boolean
- *    shadow: boolean
- *    size: ("sm"|"md"|"lg")
- * }} props
- */
-export default function CouponContent(props) {
-  let {
-    imgUrl,
-    productName,
-    price,
-    originPrice,
-    color = "#878787",
-    discountType = "percentage",
-    discountValue = 5,
-    expirationTimestamp = 0,
-    size = "md",
-    shadow,
-    url,
-  } = props;
-
-  const clickable = useMemo(() => {
-    try {
-      url = new URL(url);
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }, [url]);
-
-  const fontSize = size === "lg" ? "16px" : size === "md" ? "14px" : "10px";
-  const lineHeight = size === "lg" ? "20px" : size === "md" ? "16px" : "12px";
-  return (
-    <div
-      className={
-        styles["coupon-content-container"] +
-        " " +
-        (shadow ? styles["coupon-shadow"] : "")
-      }
-      style={{
-        cursor: clickable ? "pointer" : "auto",
-      }}
-      onClick={() => {
-        if (clickable) {
-          window.open(url, "_blank").focus();
-        }
-      }}
-    >
-      <div
-        className={styles["coupon-content-" + size]}
-        style={{
-          position: "absolute",
-          display: "flex",
-          flexDirection: "row",
-          top: "0",
-          left: "0",
-          width: "100%",
-          height: "100%",
-          fontSize: fontSize,
-          lineHeight: lineHeight,
-        }}
-      >
-        <CouponImage {...props} />
-        <CouponProductSection {...props} />
-        <CouponDiscountSection {...props} />
-      </div>
-    </div>
-  );
-}
