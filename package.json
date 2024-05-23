@@ -13,7 +13,8 @@
     "test": "echo 'test is empty'",
     "copy-submodule": "cp src/coupon/* web-components",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "build-email-component": "node render-email-coupon-template.js && cd email && bash ./run.sh"
   },
   "dependencies": {
     "dayjs": "^1.11.11",
