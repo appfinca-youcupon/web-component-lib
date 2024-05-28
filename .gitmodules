@@ -2,3 +2,7 @@
 	path = web-components
 	url = http://localhost:33000/software/youcaptcha/web-components
 	branch = components
+[submodule "email"]
+	path = email-build
+	url = http://localhost:33000/software/youcaptcha/web-components
+	branch = email
