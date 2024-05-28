@@ -21,14 +21,15 @@ export const dummyCouponData = {
  *    originPrice: number,
  *    expirationTimestamp: number,
  *    discountValue: number,
- *    discountType: ("value"|"percentage")
- *    color: string
- *    url: string
+ *    discountType: ("value"|"percentage"),
+ *    color: string,
+ *    url: string,
+ *    template: boolean
  * }} props
  */
 export default function MailCoupon(props) {
   const { size } = props;
-  return <MailCouponLg {...props} />;
+  return <MailCouponLg {...props} template={true} />;
   // return <CouponMdNew {...props} />;
   // return size === "sm" ? (
   //   <CouponSm {...props} />

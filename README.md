@@ -41,5 +41,7 @@ yarn storybook
 ## Build Email Component
 
 ```
-node render-email-coupon-template.js
+yarn email-build-component
 ```
+
+## Test Email Sending (Need AWS credential)

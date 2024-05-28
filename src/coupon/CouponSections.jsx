@@ -3,6 +3,17 @@ import { renderToString } from "react-dom/server";
 import svgToMiniDataURI from "mini-svg-data-uri";
 import dayjs from "dayjs";
 import convert from "color-convert";
+import CouponConstants from "./data/coupon-constants.json";
+
+const EMAIL_TEMPLATE_PRODUCT_NAME =
+  CouponConstants.emailCouponTemplate.productNameTemplate;
+const EMAIL_TEMPLATE_PRICE = CouponConstants.emailCouponTemplate.priceTemplate;
+const EMAIL_TEMPLATE_ORIGIN_PRICE =
+  CouponConstants.emailCouponTemplate.originPriceTemplate;
+const EMAIL_TEMPLATE_DISCOUNT =
+  CouponConstants.emailCouponTemplate.discountTemplate;
+const EMAIL_TEMPLATE_EXPIRATION =
+  CouponConstants.emailCouponTemplate.expirationTemplate;
 
 // SM: 190x50 (190~300)
 const CONTENT_HEIGHT_SM = 50;
@@ -33,6 +44,9 @@ const CONTENT_WIDTH_LG_MIN = CONTENT_WIDTH_LG - 50;
 const DISCOUNT_WIDTH_LG_MIN = DISCOUNT_WIDTH_LG - 45;
 const MAX_PRICES_LENGTH_LG = 13;
 const PADDING_LG = 12;
+
+// TODO: different currency
+const DOLLAR_SIGN = "$";
 
 const couponProductInfoContainerStyle = {
   display: "flex",
@@ -126,6 +140,7 @@ const getSizeVariables = (size) => {
  * @param {{
  *  size: ("sm"|"md"|"lg")
  *  imgUrl: string
+ *  template: boolean
  * }} props
  */
 export const CouponImage = ({ size, imgUrl }) => {
@@ -133,6 +148,7 @@ export const CouponImage = ({ size, imgUrl }) => {
     useMemo(() => {
       return getSizeVariables(size);
     }, [size]);
+
   return (
     <div
       style={{
@@ -155,8 +171,8 @@ export const CouponImage = ({ size, imgUrl }) => {
           // maxWidth: imageWidth,
           // maxHeight: contentHeight,
           // scale to fill
-          //   width: imageWidth - padding * 2,
-          //   height: contentHeight - padding * 2,
+          // width: imageWidth - padding * 2,
+          // height: contentHeight - padding * 2,
           width: "100%",
           objectFit: "cover",
         }}
@@ -165,6 +181,7 @@ export const CouponImage = ({ size, imgUrl }) => {
   );
 };
 
+// TODO
 export const StampDiv = ({ size, shop = "MyShop" }) => {
   return size == "lg" ? (
     <div
@@ -185,22 +202,27 @@ export const StampDiv = ({ size, shop = "MyShop" }) => {
   );
 };
 
-export const CouponProductSection = ({
-  productName,
-  originPrice,
-  price,
-  size,
-}) => {
+/**
+ * @param {{
+ *  size: ("sm"|"md"|"lg")
+ *  productName: string
+ *  price: number
+ *  originPrice: number
+ *  template: boolean
+ * }} props
+ */
+export const CouponProductSection = (props) => {
+  const { size, productName, originPrice, price, template } = props;
   const { contentHeight, contentWidthMin } = useMemo(() => {
     return getSizeVariables(size);
   }, [size]);
 
   const priceFormatted = useMemo(() => {
-    return `$${price}`;
+    return `${DOLLAR_SIGN}${price}`;
   }, [price]);
 
   const originPriceFormatted = useMemo(() => {
-    return `$${originPrice}`;
+    return `${DOLLAR_SIGN}${originPrice}`;
   }, [originPrice]);
 
   const isPriceSimplified = useMemo(() => {
@@ -225,49 +247,68 @@ export const CouponProductSection = ({
         minWidth: contentWidthMin,
       }}
     >
-      <span
-        //   className={styles["coupon-product-name-span-" + size]}
-        style={{
-          ...couponProductNameSpanStyles[size],
-        }}
-      >
-        {productName}
-      </span>
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "row",
-          gap: "4px",
-          fontWeight: "500",
-          alignItems: "center",
-          marginTop: "2px",
-        }}
-      >
-        {isPriceSimplified ? (
-          <></>
-        ) : (
-          <span style={{ textDecoration: "line-through", color: "gray" }}>
-            {" "}
-            ${originPrice}
-          </span>
-        )}
-        <span>${price}</span>
+      <div className="stack-col stack-ax-center ax-center">
+        <div className="h-auto my-0 ax-left">
+          <div
+            //   className={styles["coupon-product-name-span-" + size]}
+            style={{
+              ...couponProductNameSpanStyles[size],
+            }}
+          >
+            {template ? EMAIL_TEMPLATE_PRODUCT_NAME : productName}
+          </div>
+          <div
+            className="stack-row gap-2"
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "row",
+              gap: "4px",
+              fontWeight: "500",
+              alignItems: "center",
+              marginTop: "2px",
+            }}
+          >
+            {isPriceSimplified ? (
+              <></>
+            ) : (
+              <span style={{ textDecoration: "line-through", color: "gray" }}>
+                {template ? EMAIL_TEMPLATE_ORIGIN_PRICE : originPriceFormatted}
+              </span>
+            )}
+            <span>{template ? EMAIL_TEMPLATE_PRICE : priceFormatted}</span>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
+/**
+ * @param {{
+ *  size: ("sm"|"md"|"lg")
+ *  color: string
+ *  discountValue: number
+ *  discountType: ("value"|"percentage")
+ *  expirationTimestamp: number
+ *  template: boolean
+ * }} props
+ */
 export const CouponDiscountSection = ({
   size,
   color,
   discountValue,
   discountType,
   expirationTimestamp,
+  template,
 }) => {
   const { contentHeight, discountWidthMin } = useMemo(() => {
     return getSizeVariables(size);
   }, [size]);
+
+  const formattedDiscount = useMemo(() => {
+    return `${discountValue}${discountType === "percentage" ? "%" : DOLLAR_SIGN}`;
+  }, [discountType, discountValue]);
 
   const formattedExpiration = useMemo(() => {
     return dayjs(expirationTimestamp).format("MMM DD, YYYY");
@@ -303,28 +344,31 @@ export const CouponDiscountSection = ({
         color: infoTextColor,
       }}
     >
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "baseline",
-          flexDirection: "row",
-          gap: "4px",
-          fontWeight: "500",
-        }}
-      >
-        <span style={{ fontSize: "1.25em" }}>
-          {/* TODO: different currency? */}
-          <strong>
-            {discountValue}
-            {discountType === "percentage" ? "%" : "$"}
-          </strong>
-        </span>
-        <span style={{ fontSize: "0.75em" }}>OFF</span>
+      <div className="stack-col stack-ax-center ax-center">
+        <div className="h-auto my-0 ax-center">
+          <div
+            style={{
+              // width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "baseline",
+              flexDirection: "row",
+              gap: "4px",
+              // fontWeight: "500",
+            }}
+          >
+            <span style={{ fontSize: "1.25em" }}>
+              <strong>
+                {template ? EMAIL_TEMPLATE_DISCOUNT : formattedDiscount}
+              </strong>
+            </span>
+            <span style={{ fontSize: "0.75em" }}>OFF</span>
+          </div>
+          <span style={{ fontSize: "0.75em" }}>
+            {template ? EMAIL_TEMPLATE_EXPIRATION : formattedExpiration}
+          </span>
+        </div>
       </div>
-
-      <span style={{ fontSize: "0.75em" }}>{formattedExpiration}</span>
     </div>
   );
 };

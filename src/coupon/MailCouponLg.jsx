@@ -13,10 +13,13 @@ import {
 const CouponLeft = (props) => {
   return (
     <CouponBackgroungPng
+      className="h-full"
       align="left"
       style={{
         display: "flex",
       }}
+      color="#ffffff"
+      template={props?.template}
     >
       <div
         style={{
@@ -25,7 +28,11 @@ const CouponLeft = (props) => {
           justifyContent: "center",
         }}
       >
-        <CouponImage imgUrl="https://i.imgur.com/SUeDv6E.jpg" size="lg" />
+        <CouponImage
+          {...props}
+          imgUrl="https://i.imgur.com/SUeDv6E.jpg"
+          size="lg"
+        />
       </div>
     </CouponBackgroungPng>
   );
@@ -34,6 +41,7 @@ const CouponLeft = (props) => {
 const CouponCenter = (props) => {
   return (
     <CouponBackgroungPng
+      className="h-full"
       align="center"
       color="#ffffff"
       style={{
@@ -42,6 +50,7 @@ const CouponCenter = (props) => {
         position: "relative",
         justifyContent: "center",
       }}
+      template={props?.template}
     >
       <div
         style={{
@@ -59,6 +68,7 @@ const CouponCenter = (props) => {
 const CouponRight = (props) => {
   return (
     <CouponBackgroungPng
+      className="h-full"
       align="right"
       color={props.color}
       style={{
@@ -67,6 +77,7 @@ const CouponRight = (props) => {
         flexGrow: 0.75,
         position: "relative",
       }}
+      template={props?.template}
     >
       <CouponDiscountSection {...props} />
     </CouponBackgroungPng>
@@ -83,7 +94,8 @@ const CouponRight = (props) => {
  *    discountValue: number,
  *    discountType: ("value"|"percentage")
  *    color: string
- *    url: string
+ *    url: string,
+ *    template: boolean
  * }} props
  */
 export default function MailCouponLg(props) {
@@ -91,6 +103,7 @@ export default function MailCouponLg(props) {
     // TODO: example size
     <div>
       <div
+        className="stack-row stack-ay-middle h-full"
         style={{
           width: "400px",
           height: "120px",

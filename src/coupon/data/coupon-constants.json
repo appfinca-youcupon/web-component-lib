@@ -1,0 +1,14 @@
+{
+    "couponConstants": {
+        "backgroundImgHost": "https://d1jpaqhc31andn.cloudfront.net/coupons"
+    },
+    "emailCouponTemplate": {
+        "backgroundImgTemplate": "https://d1jpaqhc31andn.cloudfront.net/coupons/coupon-default.png",
+        "productImgTemplate": "https://i.imgur.com/SUeDv6E.jpg",
+        "productNameTemplate": "{PRODUCT_NAME}",
+        "originPriceTemplate": "{P0}",
+        "priceTemplate": "{P1}",
+        "discountTemplate": "{OFF}",
+        "expirationTemplate": "{EXPIRATION}"
+    }
+}
