@@ -10,7 +10,7 @@ echo "executing post-commit hook..."
 
 message="$(git log -1 --pretty=%B)"
 echo last commit message: $message
-cp src/coupon/* web-components
+cp -r src/coupon/* web-components
 cd web-components
 
 echo "commiting submodule..."

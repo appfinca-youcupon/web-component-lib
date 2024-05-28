@@ -1,4 +1,3 @@
-import CouponLg from "./CouponLg";
 import CouponLgNew from "./CouponLgNew";
 import CouponMdNew from "./CouponMdNew";
 import PropTypes from "prop-types";
