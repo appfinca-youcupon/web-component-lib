@@ -9,6 +9,7 @@ import {
   CouponImage,
   CouponProductSection,
 } from "./CouponSections";
+import { CouponRootStyle } from "./CouponStyledElements";
 
 const CouponLeft = (props) => {
   return (
@@ -41,6 +42,7 @@ const CouponCenter = (props) => {
         flexGrow: 1,
         position: "relative",
         justifyContent: "center",
+        width: "35%", // TODO: better styling
       }}
     >
       <div
@@ -66,6 +68,7 @@ const CouponRight = (props) => {
         justifyContent: "center",
         flexGrow: 0.75,
         position: "relative",
+        width: "30%", //TODO?
       }}
     >
       <CouponDiscountSection {...props} />
@@ -81,29 +84,21 @@ const CouponRight = (props) => {
  *    originPrice: number,
  *    expirationTimestamp: number,
  *    discountValue: number,
- *    discountType: ("value"|"percentage")
- *    color: string
- *    url: string
- *    outline: boolean
- *    shadow: boolean
+ *    discountType: ("value"|"percentage"),
+ *    color: string,
+ *    url: string,
+ *    outline: boolean,
+ *    shadow: boolean,
+ *    width: number,
+ *    fullWidth: boolean
  * }} props
  */
 export default function CouponLgNew(props) {
   return (
-    // TODO: example size
-    <div>
-      <div
-        style={{
-          width: "400px",
-          height: "120px",
-          display: "flex",
-          flexDirection: "row",
-        }}
-      >
-        <CouponLeft {...props} />
-        <CouponCenter {...props} />
-        <CouponRight {...props} />
-      </div>
-    </div>
+    <CouponRootStyle {...props}>
+      <CouponLeft {...props} />
+      <CouponCenter {...props} />
+      <CouponRight {...props} />
+    </CouponRootStyle>
   );
 }

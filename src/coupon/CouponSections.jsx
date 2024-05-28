@@ -4,6 +4,7 @@ import svgToMiniDataURI from "mini-svg-data-uri";
 import dayjs from "dayjs";
 import convert from "color-convert";
 import CouponConstants from "./data/coupon-constants.json";
+import { getSizeConstants } from "./utils/size";
 
 const EMAIL_TEMPLATE_PRODUCT_NAME =
   CouponConstants.emailCouponTemplate.productNameTemplate;
@@ -14,36 +15,6 @@ const EMAIL_TEMPLATE_DISCOUNT =
   CouponConstants.emailCouponTemplate.discountTemplate;
 const EMAIL_TEMPLATE_EXPIRATION =
   CouponConstants.emailCouponTemplate.expirationTemplate;
-
-// SM: 190x50 (190~300)
-const CONTENT_HEIGHT_SM = 50;
-const IMAGE_WIDTH_SM = 50;
-const CONTENT_WIDTH_SM = 75;
-const DISCOUNT_WIDTH_SM = 65;
-const CONTENT_WIDTH_SM_MIN = CONTENT_WIDTH_SM - 5;
-const DISCOUNT_WIDTH_SM_MIN = DISCOUNT_WIDTH_SM - 10;
-const MAX_PRICES_LENGTH_SM = 10;
-const PADDING_SM = 2;
-
-// MD: 320x85 (280~400)
-const CONTENT_HEIGHT_MD = 85;
-const IMAGE_WIDTH_MD = 85;
-const CONTENT_WIDTH_MD = 125;
-const DISCOUNT_WIDTH_MD = 110;
-const CONTENT_WIDTH_MD_MIN = CONTENT_WIDTH_MD - 25;
-const DISCOUNT_WIDTH_MD_MIN = DISCOUNT_WIDTH_MD - 20;
-const MAX_PRICES_LENGTH_MD = 12;
-const PADDING_MD = 4;
-
-// LG: 400x120 (320~520)
-const CONTENT_HEIGHT_LG = 120;
-const IMAGE_WIDTH_LG = 120;
-const CONTENT_WIDTH_LG = 150;
-const DISCOUNT_WIDTH_LG = 130;
-const CONTENT_WIDTH_LG_MIN = CONTENT_WIDTH_LG - 50;
-const DISCOUNT_WIDTH_LG_MIN = DISCOUNT_WIDTH_LG - 45;
-const MAX_PRICES_LENGTH_LG = 13;
-const PADDING_LG = 12;
 
 // TODO: different currency
 const DOLLAR_SIGN = "$";
@@ -104,38 +75,6 @@ const couponDiscountInfoContainerStyle = {
   paddingLeft: "4px",
 };
 
-const getSizeVariables = (size) => {
-  return size === "lg"
-    ? {
-        contentHeight: CONTENT_HEIGHT_LG,
-        contentWidth: CONTENT_WIDTH_LG,
-        imageWidth: IMAGE_WIDTH_LG,
-        discountWidth: DISCOUNT_WIDTH_LG,
-        padding: PADDING_LG,
-        contentWidthMin: CONTENT_WIDTH_LG_MIN,
-        discountWidthMin: DISCOUNT_WIDTH_LG_MIN,
-      }
-    : size === "md"
-      ? {
-          contentHeight: CONTENT_HEIGHT_MD,
-          contentWidth: CONTENT_WIDTH_MD,
-          imageWidth: IMAGE_WIDTH_MD,
-          discountWidth: DISCOUNT_WIDTH_MD,
-          padding: PADDING_MD,
-          contentWidthMin: CONTENT_WIDTH_MD_MIN,
-          discountWidthMin: DISCOUNT_WIDTH_MD_MIN,
-        }
-      : {
-          contentHeight: CONTENT_HEIGHT_SM,
-          contentWidth: CONTENT_WIDTH_SM,
-          imageWidth: IMAGE_WIDTH_SM,
-          discountWidth: DISCOUNT_WIDTH_SM,
-          padding: PADDING_SM,
-          contentWidthMin: CONTENT_WIDTH_SM_MIN,
-          discountWidthMin: DISCOUNT_WIDTH_SM_MIN,
-        };
-};
-
 /**
  * @param {{
  *  size: ("sm"|"md"|"lg")
@@ -146,7 +85,7 @@ const getSizeVariables = (size) => {
 export const CouponImage = ({ size, imgUrl }) => {
   const { contentHeight, contentWidth, imageWidth, discountWidth, padding } =
     useMemo(() => {
-      return getSizeVariables(size);
+      return getSizeConstants(size);
     }, [size]);
 
   return (
@@ -213,8 +152,8 @@ export const StampDiv = ({ size, shop = "MyShop" }) => {
  */
 export const CouponProductSection = (props) => {
   const { size, productName, originPrice, price, template } = props;
-  const { contentHeight, contentWidthMin } = useMemo(() => {
-    return getSizeVariables(size);
+  const { contentHeight, contentWidthMin, priceLengthMax } = useMemo(() => {
+    return getSizeConstants(size);
   }, [size]);
 
   const priceFormatted = useMemo(() => {
@@ -226,12 +165,7 @@ export const CouponProductSection = (props) => {
   }, [originPrice]);
 
   const isPriceSimplified = useMemo(() => {
-    const maxLength =
-      size === "lg"
-        ? MAX_PRICES_LENGTH_LG
-        : size === "md"
-          ? MAX_PRICES_LENGTH_MD
-          : MAX_PRICES_LENGTH_SM;
+    const maxLength = priceLengthMax;
     return (
       (priceFormatted?.length ?? 0) + (originPriceFormatted?.length ?? 0) >
       maxLength
@@ -269,7 +203,7 @@ export const CouponProductSection = (props) => {
               marginTop: "2px",
             }}
           >
-            {isPriceSimplified ? (
+            {isPriceSimplified && !template ? (
               <></>
             ) : (
               <span style={{ textDecoration: "line-through", color: "gray" }}>
@@ -303,7 +237,7 @@ export const CouponDiscountSection = ({
   template,
 }) => {
   const { contentHeight, discountWidthMin } = useMemo(() => {
-    return getSizeVariables(size);
+    return getSizeConstants(size);
   }, [size]);
 
   const formattedDiscount = useMemo(() => {
@@ -353,6 +287,7 @@ export const CouponDiscountSection = ({
               justifyContent: "center",
               alignItems: "baseline",
               flexDirection: "row",
+              flexWrap: "wrap",
               gap: "4px",
               // fontWeight: "500",
             }}

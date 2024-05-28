@@ -1,0 +1,116 @@
+{
+    "dummyCoupon": {
+        "domain": "datastore88.myshopify.com",
+        "imgUrl": "https://i.imgur.com/SUeDv6E.jpg",
+        "productName": "Test Product 1",
+        "price": 300,
+        "originPrice": 400,
+        "color": "#005090",
+        "expiration": "Oct 12, 2023",
+        "discountType": "percentage",
+        "discountValue": 5
+    },
+    "dummyCouponsLittle": [
+        {
+            "domain": "datastore88.myshopify.com",
+            "imgUrl": "https://i.imgur.com/SUeDv6E.jpg",
+            "productName": "Test Product 1",
+            "price": 300,
+            "originPrice": 400,
+            "color": "#005090",
+            "expiration": "Oct 12, 2023",
+            "discountType": "percentage",
+            "discountValue": 5
+        },
+        {
+            "domain": "datastore88.myshopify.com",
+            "imgUrl": "https://i.imgur.com/SUeDv6E.jpg",
+            "productName": "Test Product 1 Test Product 1 Test Product 1 Test Product 1 Test Product 1",
+            "price": 300,
+            "originPrice": 400,
+            "color": "#005090",
+            "expiration": "Oct 12, 2023",
+            "discountType": "percentage",
+            "discountValue": 5
+        },
+        {
+            "domain": "datastore88.myshopify.com",
+            "imgUrl": "https://i.imgur.com/SUeDv6E.jpg",
+            "productName": "Test Product 1",
+            "price": 300,
+            "originPrice": 400,
+            "color": "#005090",
+            "expiration": "Oct 12, 2023",
+            "discountType": "value",
+            "discountValue": 123456789
+        },
+        {
+            "domain": "datastore88.myshopify.com",
+            "imgUrl": "https://i.imgur.com/SUeDv6E.jpg",
+            "productName": "Test Product 1 Test Product 1 Test Product 1 Test Product 1 Test Product 1",
+            "price": 300,
+            "originPrice": 400,
+            "color": "#005090",
+            "expiration": "Oct 12, 2023",
+            "discountType": "value",
+            "discountValue": 123456789
+        }
+    ],
+    "dummyCouponsMedium": [
+        {
+            "domain": "someshop.com",
+            "imgUrl": "https://i.imgur.com/aVQ5MH3.png",
+            "productName": "Concha PANtuflas Slippers with Memory Foam and Plush Lining",
+            "price": "13.5",
+            "originPrice": "15",
+            "color": "#005090",
+            "expiration": "Oct 12, 2023",
+            "expirationTimestamp": 1704227725054,
+            "discountValue": 10
+        },
+        {
+            "domain": "someshop.com",
+            "imgUrl": "https://i.imgur.com/uda7Ml2.png",
+            "productName": "UGG Men's Classic Ultra Mini Fashion Boot",
+            "price": "95",
+            "originPrice": "100",
+            "off": "10",
+            "color": "#005090",
+            "expiration": "Nov 9, 2023",
+            "expirationTimestamp": 1704227725054,
+            "discountValue": 5
+        },
+        {
+            "domain": "someshop.com",
+            "imgUrl": "https://i.imgur.com/782KwgU.png",
+            "productName": "Hey Dude Mens Wally Sox",
+            "price": "114",
+            "originPrice": "120",
+            "color": "#005090",
+            "expirationTimestamp": 1704227725054,
+            "discountValue": 5
+        },
+        {
+            "domain": "someshop.com",
+            "imgUrl": "https://i.imgur.com/oZc1HAj.png",
+            "productName": "Hipster Hip Hop Longline Crewneck T-Shirt",
+            "price": "24.99",
+            "originPrice": "29.99",
+            "color": "#005090",
+            "expirationTimestamp": 1704227725054,
+            "discountValue": 5,
+            "discountType": "value"
+        },
+        {
+            "domain": "someshop.com",
+            "imgUrl": "https://i.imgur.com/eFt026H.png",
+            "productName": "Legendary Whitetails Men's Journeyman Shirt Jacket",
+            "price": "188",
+            "originPrice": "200",
+            "color": "#005090",
+            "expirationTimestamp": 1704227725054,
+            "discountValue": 12,
+            "discountType": "value"
+        }
+    ]
+}
