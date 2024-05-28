@@ -1,8 +1,6 @@
 import CouponLg from "./CouponLg";
 import CouponLgNew from "./CouponLgNew";
 import CouponMdNew from "./CouponMdNew";
-import CouponMd from "./CouponMd";
-import CouponSm from "./CouponSm";
 import PropTypes from "prop-types";
 
 export const dummyCouponData = {
