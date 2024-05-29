@@ -4,6 +4,7 @@ import CouponMdNew from "./CouponMdNew";
 import PropTypes from "prop-types";
 import dummyCoupons from "./data/dummy-coupons.json";
 import MailCoupon from "./MailCoupon";
+import { getLargeDummyCoupons } from "./utils/dummy";
 
 /**
  * @typedef {Object} CouponData
@@ -19,14 +20,7 @@ import MailCoupon from "./MailCoupon";
 
 const CouponSimpleContainer = (props) => {
   return props?.fullWidth ? (
-    <div
-      style={{
-        display: "flex",
-        flexGrow: 1,
-      }}
-    >
-      {props?.children}
-    </div>
+    <div className="col-12 col-md-6 col-xl-4 p-2">{props?.children}</div>
   ) : (
     props?.children
   );
@@ -46,20 +40,11 @@ const CouponSimpleContainer = (props) => {
 export default function Coupons(props) {
   const { couponsData, mail, ...stylingProps } = props;
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        gap: "8px",
-        justifyContent: "center",
-      }}
-    >
+    <div className="container row">
       {couponsData?.length > 0 ? (
         couponsData?.map((couponData, idx) => {
           return (
-            <CouponSimpleContainer>
+            <CouponSimpleContainer {...props}>
               {mail ? (
                 <MailCoupon
                   key={idx + couponData.productName}
@@ -103,11 +88,14 @@ Coupons.propTypes = {
   width: PropTypes.number,
   fullWidth: PropTypes.bool,
   mail: PropTypes.bool,
+  layout: PropTypes.oneOf([0, 10, 11, 12, 20, 21, 22, 30, 31, 32, 40, 41, 42]),
 };
 
 Coupons.defaultProps = {
-  couponsData: dummyCoupons.dummyCouponsMedium,
+  couponsData: dummyCoupons.dummyCouponsLarge,
+  // couponsData: getLargeDummyCoupons(15),
   width: 400,
   fullWidth: false,
   mail: false,
+  layout: 0,
 };

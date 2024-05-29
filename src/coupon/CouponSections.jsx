@@ -75,6 +75,25 @@ const couponDiscountInfoContainerStyle = {
   paddingLeft: "4px",
 };
 
+const getIsLightColor = (color) => {
+  let hslColor = convert.hex.hsl(color);
+  if (hslColor) {
+    return hslColor[2] > 55 || false;
+  }
+  return false;
+};
+
+const getInfoTextColor = (color) => {
+  let isLightColor = getIsLightColor(color);
+  let c = "white";
+  if (isLightColor) {
+    let hslColor = convert.hex.hsl(color);
+    hslColor[2] = hslColor[2] - 50;
+    c = "#" + convert.hsl.hex(hslColor);
+  }
+  return c;
+};
+
 /**
  * @param {{
  *  size: ("sm"|"md"|"lg")
@@ -121,17 +140,49 @@ export const CouponImage = ({ size, imgUrl }) => {
 };
 
 // TODO
-export const StampDiv = ({ size, shop = "MyShop" }) => {
+export const StampDiv = ({ size, shop = "MyShop", layout, color }) => {
+  const isLightColor = useMemo(() => {
+    return getIsLightColor(color);
+  }, [color]);
+
+  const infoTextColor = useMemo(() => {
+    getInfoTextColor(color);
+  }, [color]);
+
+  let colorType = layout % 10;
+  let posType =
+    Math.floor(layout / 10) === 1
+      ? "topLeft"
+      : Math.floor(layout / 10) === 2
+        ? "topLeft"
+        : Math.floor(layout / 10) === 3
+          ? "bottomRight"
+          : Math.floor(layout / 10) === 4
+            ? "bottomRight"
+            : "topLeft";
+
   return size == "lg" ? (
     <div
       style={{
+        whiteSpace: "nowrap",
         position: "absolute",
-        left: "8px",
-        bottom: "2px",
+        left: posType == "topLeft" ? "8px" : "auto",
+        top: posType == "topLeft" ? "2px" : "auto",
+        right: posType == "bottomRight" ? "8px" : "auto",
+        bottom: posType == "bottomRight" ? "2px" : "auto",
         fontSize: "10px",
         padding: "2px",
         backgroundColor: "transparent",
-        color: "#878787",
+        // color: "#878787",
+        color:
+          colorType == 1
+            ? color
+            : colorType == 2
+              ? isLightColor
+                ? infoTextColor
+                : color
+              : "#878787",
+        zIndex: 1,
       }}
     >
       <span>{`${shop} • YouCupon`}</span>
@@ -151,7 +202,7 @@ export const StampDiv = ({ size, shop = "MyShop" }) => {
  * }} props
  */
 export const CouponProductSection = (props) => {
-  const { size, productName, originPrice, price, template } = props;
+  const { size, productName, originPrice, price, template, layout } = props;
   const { contentHeight, contentWidthMin, priceLengthMax } = useMemo(() => {
     return getSizeConstants(size);
   }, [size]);
@@ -171,6 +222,8 @@ export const CouponProductSection = (props) => {
       maxLength
     );
   }, [priceFormatted, originPriceFormatted]);
+
+  const bottomMargin = Math.floor(layout / 30) > 0;
 
   return (
     <div
@@ -201,6 +254,7 @@ export const CouponProductSection = (props) => {
               fontWeight: "500",
               alignItems: "center",
               marginTop: "2px",
+              marginBottom: bottomMargin ? "12px" : 0,
             }}
           >
             {isPriceSimplified && !template ? (
@@ -235,6 +289,7 @@ export const CouponDiscountSection = ({
   discountType,
   expirationTimestamp,
   template,
+  layout,
 }) => {
   const { contentHeight, discountWidthMin } = useMemo(() => {
     return getSizeConstants(size);
@@ -245,26 +300,19 @@ export const CouponDiscountSection = ({
   }, [discountType, discountValue]);
 
   const formattedExpiration = useMemo(() => {
-    return dayjs(expirationTimestamp).format("MMM DD, YYYY");
+    // return dayjs(expirationTimestamp).format("MMM DD, YYYY");
+    return dayjs(expirationTimestamp).format("YYYY-MM-DD");
   }, [expirationTimestamp]);
 
   const isLightColor = useMemo(() => {
-    let hslColor = convert.hex.hsl(color);
-    if (hslColor) {
-      return hslColor[2] > 55 || false;
-    }
-    return false;
+    return getIsLightColor(color);
   }, [color]);
 
   const infoTextColor = useMemo(() => {
-    let c = "white";
-    if (isLightColor) {
-      let hslColor = convert.hex.hsl(color);
-      hslColor[2] = hslColor[2] - 50;
-      c = "#" + convert.hsl.hex(hslColor);
-    }
-    return c;
-  }, [isLightColor]);
+    return getInfoTextColor(color);
+  }, [color]);
+
+  const bottomRight = layout % 20 >= 10;
 
   return (
     <div
@@ -299,7 +347,15 @@ export const CouponDiscountSection = ({
             </span>
             <span style={{ fontSize: "0.75em" }}>OFF</span>
           </div>
-          <span style={{ fontSize: "0.75em" }}>
+          <span
+            style={{
+              fontSize: "0.75em",
+              position: bottomRight ? "absolute" : "relative",
+              display: bottomRight ? "block" : "flex",
+              bottom: bottomRight ? "4px" : "auto",
+              right: bottomRight ? "12px" : "auto",
+            }}
+          >
             {template ? EMAIL_TEMPLATE_EXPIRATION : formattedExpiration}
           </span>
         </div>

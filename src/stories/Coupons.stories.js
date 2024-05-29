@@ -5,7 +5,7 @@ import Coupons from "../coupon/Coupons";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
-  title: "YouCupon/Coupons",
+  title: "YouCupon/View/Coupons",
   component: Coupons,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -35,6 +35,7 @@ export const Lg = {
 
 export const LgFullWidth = {
   args: {
+    width: 300,
     fullWidth: true,
   },
 };

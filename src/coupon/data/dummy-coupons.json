@@ -112,5 +112,138 @@
             "discountValue": 12,
             "discountType": "value"
         }
+    ],
+    "dummyCouponsLarge": [
+        {
+            "domain": "TestShop_1",
+            "imgUrl": "https://i.imgur.com/aVQ5MH3.png",
+            "productName": "Concha PANtuflas Slippers with Memory Foam and Plush Lining",
+            "price": "13.5",
+            "originPrice": "15",
+            "color": "#005090",
+            "expiration": "Oct 12, 2023",
+            "expirationTimestamp": 1714595725054,
+            "discountValue": 10
+        },
+        {
+            "domain": "TestShop_1",
+            "imgUrl": "https://i.imgur.com/uda7Ml2.png",
+            "productName": "UGG Men's Classic Ultra Mini Fashion Boot",
+            "price": "95",
+            "originPrice": "100",
+            "off": "10",
+            "color": "#005090",
+            "expiration": "Nov 9, 2023",
+            "expirationTimestamp": 1714595725054,
+            "discountValue": 5
+        },
+        {
+            "domain": "TestShop_1",
+            "imgUrl": "https://i.imgur.com/782KwgU.png",
+            "productName": "Hey Dude Mens Wally Sox",
+            "price": "114",
+            "originPrice": "120",
+            "color": "#005090",
+            "expirationTimestamp": 1714595725054,
+            "discountValue": 5
+        },
+        {
+            "domain": "TestShop_1",
+            "imgUrl": "https://i.imgur.com/oZc1HAj.png",
+            "productName": "Hipster Hip Hop Longline Crewneck T-Shirt",
+            "price": "24.99",
+            "originPrice": "29.99",
+            "color": "#005090",
+            "expirationTimestamp": 1714595725054,
+            "discountValue": 5,
+            "discountType": "value"
+        },
+        {
+            "domain": "TestShop_1",
+            "imgUrl": "https://i.imgur.com/eFt026H.png",
+            "productName": "Legendary Whitetails Men's Journeyman Shirt Jacket",
+            "price": "188",
+            "originPrice": "200",
+            "color": "#005090",
+            "expirationTimestamp": 1714595725054,
+            "discountValue": 12,
+            "discountType": "value"
+        },
+        {
+            "domain": "TestShop_2",
+            "imgUrl": "https://i.imgur.com/uda7Ml2.png",
+            "productName": "UGG Men's Classic Ultra Mini Fashion Boot",
+            "price": "95",
+            "originPrice": "100",
+            "off": "10",
+            "color": "#108090",
+            "expiration": "Nov 9, 2023",
+            "expirationTimestamp": 1716323725054,
+            "discountValue": 5
+        },
+        {
+            "domain": "TestShop_2",
+            "imgUrl": "https://i.imgur.com/782KwgU.png",
+            "productName": "Hey Dude Mens Wally Sox",
+            "price": "114",
+            "originPrice": "120",
+            "color": "#108090",
+            "expirationTimestamp": 1716323725054,
+            "discountValue": 5
+        },
+        {
+            "domain": "TestShop_2",
+            "imgUrl": "https://i.imgur.com/oZc1HAj.png",
+            "productName": "Hipster Hip Hop Longline Crewneck T-Shirt",
+            "price": "24.99",
+            "originPrice": "29.99",
+            "color": "#108090",
+            "expirationTimestamp": 1716323725054,
+            "discountValue": 5,
+            "discountType": "value"
+        },
+        {
+            "domain": "TestShop_2",
+            "imgUrl": "https://i.imgur.com/eFt026H.png",
+            "productName": "Legendary Whitetails Men's Journeyman Shirt Jacket",
+            "price": "188",
+            "originPrice": "200",
+            "color": "#108090",
+            "expirationTimestamp": 1716323725054,
+            "discountValue": 12,
+            "discountType": "value"
+        },
+        {
+            "domain": "TestShop_3",
+            "imgUrl": "https://i.imgur.com/782KwgU.png",
+            "productName": "Hey Dude Mens Wally Sox",
+            "price": "114",
+            "originPrice": "120",
+            "color": "#EAFF87",
+            "expirationTimestamp": 1718051725054,
+            "discountValue": 5
+        },
+        {
+            "domain": "TestShop_3",
+            "imgUrl": "https://i.imgur.com/oZc1HAj.png",
+            "productName": "Hipster Hip Hop Longline Crewneck T-Shirt",
+            "price": "24.99",
+            "originPrice": "29.99",
+            "color": "#EAFF87",
+            "expirationTimestamp": 1718051725054,
+            "discountValue": 5,
+            "discountType": "value"
+        },
+        {
+            "domain": "TestShop_3",
+            "imgUrl": "https://i.imgur.com/eFt026H.png",
+            "productName": "Legendary Whitetails Men's Journeyman Shirt Jacket",
+            "price": "188",
+            "originPrice": "200",
+            "color": "#EAFF87",
+            "expirationTimestamp": 1718051725054,
+            "discountValue": 12,
+            "discountType": "value"
+        }
     ]
 }

@@ -30,22 +30,13 @@ export const dummyCouponData = {
  *    shadow: boolean,
  *    size: ("sm"|"md"|"lg"),
  *    width: number,
- *    fullWidth: boolean
+ *    fullWidth: boolean,
+ *    layout: number,
  * }} props
  */
 export default function Coupon(props) {
   const { size } = props;
-  // return <CouponLgNew {...props} />;
-  // return <CouponMdNew {...props} />;
   return <CouponNew {...props} />;
-  // return <CouponMdNew {...props} />;
-  // return size === "sm" ? (
-  //   <CouponLgNew {...props} />
-  // ) : size === "md" ? (
-  //   <CouponMdNew {...props} />
-  // ) : (
-  //   <CouponLgNew {...props} />
-  // );
 }
 
 // NOTE: isRequired will only be shown if no default value
@@ -64,6 +55,7 @@ Coupon.propTypes = {
   size: PropTypes.oneOf(["sm", "md", "lg"]),
   width: PropTypes.number,
   fullWidth: PropTypes.bool,
+  layout: PropTypes.oneOf([0, 10, 11, 12, 20, 21, 22, 30, 31, 32, 40, 41, 42]),
 };
 
 Coupon.defaultProps = {
@@ -81,4 +73,5 @@ Coupon.defaultProps = {
   size: "lg",
   width: 0,
   fullWidth: false,
+  layout: 0,
 };

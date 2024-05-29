@@ -34,8 +34,8 @@ export const CouponRootStyle = (props) => {
 
   const computedMinWidth = useMemo(() => {
     let { totalWidthMin: defaultMinWidth } = getSizeConstants(size);
-    return fullWidth ? Math.max(width, defaultMinWidth) : defaultMinWidth;
-  }, [size, width, fullWidth]);
+    return Math.max(width, defaultMinWidth);
+  }, [width, fullWidth]);
 
   let computedMaxWidth = useMemo(() => {
     let { totalWidthMax: defaultMaxWidth } = getSizeConstants(size);

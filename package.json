@@ -19,6 +19,7 @@
     "email-test": "yarn email-build-component && yarn email-compose-and-send"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "dayjs": "^1.11.11",
     "mini-svg-data-uri": "^1.4.4",
     "react": "^18.2.0",

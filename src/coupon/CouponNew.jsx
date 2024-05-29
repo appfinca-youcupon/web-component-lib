@@ -8,11 +8,17 @@ import {
   CouponDiscountSection,
   CouponImage,
   CouponProductSection,
+  StampDiv,
 } from "./CouponSections";
 import { CouponRootStyle } from "./CouponStyledElements";
 
 const CouponLeft = (props) => {
-  const { size } = props;
+  const { size, imgUrl, layout } = props;
+
+  const showStamp = useMemo(() => {
+    return Math.floor(layout / 10) === 1 || Math.floor(layout / 10) === 2;
+  }, [layout]);
+
   return (
     <CouponBackgroungSvg
       align="left"
@@ -23,19 +29,26 @@ const CouponLeft = (props) => {
     >
       <div
         style={{
+          position: "relative",
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
         }}
       >
-        <CouponImage imgUrl="https://i.imgur.com/SUeDv6E.jpg" size={size} />
+        {showStamp ? <StampDiv {...props} /> : <></>}
+        <CouponImage imgUrl={imgUrl} size={size} />
       </div>
     </CouponBackgroungSvg>
   );
 };
 
 const CouponCenter = (props) => {
-  const { size } = props;
+  const { size, layout } = props;
+
+  const showStamp = useMemo(() => {
+    return Math.floor(layout / 10) === 3 || Math.floor(layout / 10) === 4;
+  }, [layout]);
+
   return (
     <CouponBackgroungSvg
       align="center"
@@ -56,7 +69,7 @@ const CouponCenter = (props) => {
         }}
       >
         <CouponProductSection {...props} />
-        {/* <StampDiv {...props} /> */}
+        {showStamp ? <StampDiv {...props} /> : <></>}
       </div>
     </CouponBackgroungSvg>
   );
@@ -97,7 +110,8 @@ const CouponRight = (props) => {
  *    shadow: boolean,
  *    size: ("sm"|"md"|"lg"),
  *    width: number,
- *    fullWidth: boolean
+ *    fullWidth: boolean,
+ *    layout: number
  * }} props
  */
 export default function CouponNew(props) {
