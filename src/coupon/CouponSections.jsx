@@ -132,6 +132,8 @@ export const CouponImage = ({ size, imgUrl }) => {
           // width: imageWidth - padding * 2,
           // height: contentHeight - padding * 2,
           width: "100%",
+          maxWidth: "100%",
+          maxHeight: "100%",
           objectFit: "cover",
         }}
       />

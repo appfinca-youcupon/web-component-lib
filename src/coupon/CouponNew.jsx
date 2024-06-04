@@ -31,6 +31,7 @@ const CouponLeft = (props) => {
       style={{
         display: "flex",
         width: "35%",
+        justifyContent: "center",
         maxWidth: `${imageWidth - padding * 2}px`,
       }}
       size={size}
