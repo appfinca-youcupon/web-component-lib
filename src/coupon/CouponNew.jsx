@@ -11,6 +11,7 @@ import {
   StampDiv,
 } from "./CouponSections";
 import { CouponRootStyle } from "./CouponStyledElements";
+import { getSizeConstants } from "./utils/size";
 
 const CouponLeft = (props) => {
   const { size, imgUrl, layout } = props;
@@ -19,11 +20,18 @@ const CouponLeft = (props) => {
     return Math.floor(layout / 10) === 1 || Math.floor(layout / 10) === 2;
   }, [layout]);
 
+  const { contentHeight, contentWidth, imageWidth, discountWidth, padding } =
+    useMemo(() => {
+      return getSizeConstants(size);
+    }, [size]);
+
   return (
     <CouponBackgroungSvg
       align="left"
       style={{
         display: "flex",
+        width: "35%",
+        maxWidth: `${imageWidth - padding * 2}px`,
       }}
       size={size}
     >

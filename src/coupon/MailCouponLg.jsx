@@ -10,14 +10,23 @@ import {
   CouponProductSection,
 } from "./CouponSections";
 import { CouponRootStyle } from "./CouponStyledElements";
+import { getSizeConstants } from "./utils/size";
 
 const CouponLeft = (props) => {
+  const { size } = props;
+  const { contentHeight, contentWidth, imageWidth, discountWidth, padding } =
+    useMemo(() => {
+      return getSizeConstants(size);
+    }, [size]);
+
   return (
     <CouponBackgroungPng
       className="h-full"
       align="left"
       style={{
         display: "flex",
+        width: "35%",
+        maxWidth: `${imageWidth - padding * 2}px`,
       }}
       color="#ffffff"
       template={props?.template}

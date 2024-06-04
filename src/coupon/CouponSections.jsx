@@ -113,7 +113,7 @@ export const CouponImage = ({ size, imgUrl }) => {
         // width: imageWidth,
         // minWidth: imageWidth,
         // height: contentHeight,
-        maxWidth: imageWidth - padding * 2,
+        maxWidth: `${imageWidth - padding * 2}px`,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

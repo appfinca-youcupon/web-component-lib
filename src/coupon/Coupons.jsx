@@ -1,6 +1,4 @@
 import Coupon from "./Coupon";
-import CouponLgNew from "./CouponLgNew";
-import CouponMdNew from "./CouponMdNew";
 import PropTypes from "prop-types";
 import dummyCoupons from "./data/dummy-coupons.json";
 import MailCoupon from "./MailCoupon";
