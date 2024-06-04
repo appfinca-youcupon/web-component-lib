@@ -16,9 +16,11 @@
     "build-storybook": "storybook build",
     "email-build": "node render-email-coupon-template.js && cd email && bash ./run.sh",
     "email-send": "node ./email/send.js",
-    "email-test": "yarn email-build-component && yarn email-compose-and-send"
+    "email-test": "yarn email-build && yarn email-send"
   },
   "dependencies": {
+    "@mdi/js": "^7.4.47",
+    "@mdi/react": "^1.6.1",
     "bootstrap": "^5.3.3",
     "dayjs": "^1.11.11",
     "mini-svg-data-uri": "^1.4.4",

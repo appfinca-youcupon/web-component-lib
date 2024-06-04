@@ -19,6 +19,9 @@ export const CouponRootStyle = (props) => {
     className = "",
   } = props;
 
+  const fontSize = size === "lg" ? "16px" : size === "md" ? "14px" : "10px";
+  const lineHeight = size === "lg" ? "20px" : size === "md" ? "16px" : "12px";
+
   const defaultWidth = useMemo(() => {
     return size == "sm" ? "200px" : size == "md" ? "300px" : "400px";
   }, [size]);
@@ -54,6 +57,8 @@ export const CouponRootStyle = (props) => {
         height: computedHeight,
         display: "flex",
         flexDirection: "row",
+        fontSize: fontSize,
+        lineHeight: lineHeight,
       }}
     >
       {props.children}

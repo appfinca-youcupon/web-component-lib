@@ -167,9 +167,9 @@ export const StampDiv = ({ size, shop = "MyShop", layout, color }) => {
         whiteSpace: "nowrap",
         position: "absolute",
         left: posType == "topLeft" ? "8px" : "auto",
-        top: posType == "topLeft" ? "2px" : "auto",
+        top: posType == "topLeft" ? "0px" : "auto",
         right: posType == "bottomRight" ? "8px" : "auto",
-        bottom: posType == "bottomRight" ? "2px" : "auto",
+        bottom: posType == "bottomRight" ? "0px" : "auto",
         fontSize: "10px",
         padding: "2px",
         backgroundColor: "transparent",
@@ -300,8 +300,9 @@ export const CouponDiscountSection = ({
   }, [discountType, discountValue]);
 
   const formattedExpiration = useMemo(() => {
-    // return dayjs(expirationTimestamp).format("MMM DD, YYYY");
-    return dayjs(expirationTimestamp).format("YYYY-MM-DD");
+    return dayjs(expirationTimestamp).format("MMM DD, YYYY");
+    // return dayjs(expirationTimestamp).format("YYYY-MM-DD");
+    // return `Until ${dayjs(expirationTimestamp).format("MMM DD")}`;
   }, [expirationTimestamp]);
 
   const isLightColor = useMemo(() => {
@@ -337,6 +338,7 @@ export const CouponDiscountSection = ({
               flexDirection: "row",
               flexWrap: "wrap",
               gap: "4px",
+              margin: "4px",
               // fontWeight: "500",
             }}
           >

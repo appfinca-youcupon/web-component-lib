@@ -1,18 +1,16 @@
 import { fn } from "@storybook/test";
-import CouponLg from "../../web-components/CouponLg";
-import Coupon from "../coupon/Coupon";
-import Coupons from "../coupon/Coupons";
+import CouponsList from "../coupon/CouponsList";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
-  title: "YouCupon/Preview/Coupons",
-  component: Coupons,
+  title: "YouCupon/Preview/CouponsList",
+  component: CouponsList,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
     docs: {
       description: {
-        component: "YouCupon coupons. Used to view multiple coupons together",
+        component: "YouCupon coupons. Used in storefront",
       },
     },
   },
