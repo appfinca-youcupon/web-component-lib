@@ -42,7 +42,7 @@ export default function Coupons(props) {
       {couponsData?.length > 0 ? (
         couponsData?.map((couponData, idx) => {
           return (
-            <CouponSimpleContainer {...props}>
+            <CouponSimpleContainer {...props} key={idx}>
               {mail ? (
                 <MailCoupon
                   key={idx + couponData.productName}

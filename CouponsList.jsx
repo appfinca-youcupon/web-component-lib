@@ -58,7 +58,7 @@ export default function CouponsList(props) {
             {couponsData?.length > 0 ? (
               couponsData?.map((couponData, idx) => {
                 return (
-                  <CouponSimpleContainer {...props}>
+                  <CouponSimpleContainer {...props} key={idx}>
                     <Coupon
                       key={idx + couponData.productName}
                       {...couponData}
