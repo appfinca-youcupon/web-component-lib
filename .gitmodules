@@ -1,0 +1,8 @@
+[submodule "email2"]
+	path = email-build
+	url = https://github.com/appfinca-youcupon/web-component-lib
+	branch = email
+[submodule "components2"]
+	path = components
+	url = https://github.com/appfinca-youcupon/web-component-lib
+	branch = components

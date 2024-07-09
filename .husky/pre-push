@@ -8,12 +8,12 @@ handle_error() {
 
 echo "executing pre-push hook..."
 
-cd web-components
+cd components
 
 echo "pushing submodule..."
 # env -i git status || handle_error "Failed to get git status"
 # env -i git add -A 
 # env -i git commit -m "update from master: $message" 
-env -i git push origin components
+env -i git push github components
 
 echo "pre-push hook complete!"
