@@ -95,5 +95,5 @@ Coupons.defaultProps = {
   width: 400,
   fullWidth: false,
   mail: false,
-  layout: 0,
+  layout: 20,
 };
