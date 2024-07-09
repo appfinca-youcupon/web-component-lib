@@ -1,0 +1,52 @@
+{
+    "couponConstants": {
+        "backgroundImgHost": "https://d1jpaqhc31andn.cloudfront.net/coupons"
+    },
+    "sizeConstants": {
+        "lg": {
+            "totalWidthMin": 320,
+            "totalWidthMax": 520,
+            "contentHeight": 120,
+            "imageWidth": 120,
+            "contentWidth": 150,
+            "discountWidth": 130,
+            "contentWidthMin": 100,
+            "discountWidthMin": 85,
+            "priceLengthMax": 13,
+            "padding": 12
+        },
+        "md": {
+            "totalWidthMin": 280,
+            "totalWidthMax": 400,
+            "contentHeight": 85,
+            "imageWidth": 85,
+            "contentWidth": 125,
+            "discountWidth": 110,
+            "contentWidthMin": 100,
+            "discountWidthMin": 90,
+            "priceLengthMax": 12,
+            "padding": 4
+        },
+        "sm": {
+            "totalWidthMin": 190,
+            "totalWidthMax": 300,
+            "contentHeight": 50,
+            "imageWidth": 50,
+            "contentWidth": 75,
+            "discountWidth": 65,
+            "contentWidthMin": 70,
+            "discountWidthMin": 55,
+            "priceLengthMax": 10,
+            "padding": 2
+        }
+    },
+    "emailCouponTemplate": {
+        "backgroundImgTemplate": "https://d1jpaqhc31andn.cloudfront.net/coupons/coupon-default.png",
+        "productImgTemplate": "https://i.imgur.com/SUeDv6E.jpg",
+        "productNameTemplate": "{PRODUCT_NAME}",
+        "originPriceTemplate": "{P0}",
+        "priceTemplate": "{P1}",
+        "discountTemplate": "{OFF}",
+        "expirationTemplate": "{EXPIRATION}"
+    }
+}

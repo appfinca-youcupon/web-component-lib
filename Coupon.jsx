@@ -1,9 +1,5 @@
-import CouponLg from "./CouponLg";
-import CouponLgNew from "./CouponLgNew";
-import CouponMdNew from "./CouponMdNew";
-import CouponMd from "./CouponMd";
-import CouponSm from "./CouponSm";
 import PropTypes from "prop-types";
+import CouponNew from "./CouponNew";
 
 export const dummyCouponData = {
   domain: "datastore88.myshopify.com",
@@ -25,25 +21,20 @@ export const dummyCouponData = {
  *    originPrice: number,
  *    expirationTimestamp: number,
  *    discountValue: number,
- *    discountType: ("value"|"percentage")
- *    color: string
- *    url: string
- *    outline: boolean
- *    shadow: boolean
- *    size: ("sm"|"md"|"lg")
+ *    discountType: ("value"|"percentage"),
+ *    color: string,
+ *    url: string,
+ *    outline: boolean,
+ *    shadow: boolean,
+ *    size: ("sm"|"md"|"lg"),
+ *    width: number,
+ *    fullWidth: boolean,
+ *    layout: number,
  * }} props
  */
 export default function Coupon(props) {
   const { size } = props;
-  return <CouponLgNew {...props} />;
-  // return <CouponMdNew {...props} />;
-  // return size === "sm" ? (
-  //   <CouponSm {...props} />
-  // ) : size === "md" ? (
-  //   <CouponMd {...props} />
-  // ) : (
-  //   <CouponLg {...props} />
-  // );
+  return <CouponNew {...props} />;
 }
 
 // NOTE: isRequired will only be shown if no default value
@@ -60,6 +51,9 @@ Coupon.propTypes = {
   outline: PropTypes.bool,
   shadow: PropTypes.bool,
   size: PropTypes.oneOf(["sm", "md", "lg"]),
+  width: PropTypes.number,
+  fullWidth: PropTypes.bool,
+  layout: PropTypes.oneOf([0, 10, 11, 12, 20, 21, 22, 30, 31, 32, 40, 41, 42]),
 };
 
 Coupon.defaultProps = {
@@ -75,4 +69,7 @@ Coupon.defaultProps = {
   outline: true,
   shadow: false,
   size: "lg",
+  width: 0,
+  fullWidth: false,
+  layout: 0,
 };

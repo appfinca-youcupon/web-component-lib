@@ -21,22 +21,17 @@ export const dummyCouponData = {
  *    originPrice: number,
  *    expirationTimestamp: number,
  *    discountValue: number,
- *    discountType: ("value"|"percentage")
- *    color: string
- *    url: string
+ *    discountType: ("value"|"percentage"),
+ *    color: string,
+ *    url: string,
+ *    template: boolean,
+ *    width: number,
+ *    fullWidth: boolean
  * }} props
  */
 export default function MailCoupon(props) {
   const { size } = props;
   return <MailCouponLg {...props} />;
-  // return <CouponMdNew {...props} />;
-  // return size === "sm" ? (
-  //   <CouponSm {...props} />
-  // ) : size === "md" ? (
-  //   <CouponMd {...props} />
-  // ) : (
-  //   <CouponLg {...props} />
-  // );
 }
 
 // NOTE: isRequired will only be shown if no default value
@@ -50,6 +45,8 @@ MailCoupon.propTypes = {
   discountType: PropTypes.oneOf(["value", "percentage"]),
   color: PropTypes.string,
   url: PropTypes.string,
+  width: PropTypes.number,
+  fullWidth: PropTypes.bool,
 };
 
 MailCoupon.defaultProps = {
@@ -62,4 +59,6 @@ MailCoupon.defaultProps = {
   discountType: dummyCouponData.discountType,
   color: dummyCouponData.color,
   url: "",
+  width: 400,
+  fullWidth: false,
 };
