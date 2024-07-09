@@ -1,5 +1,5 @@
 import { fn } from "@storybook/test";
-import CouponLg from "../../web-components/CouponLg";
+import CouponLg from "../../components/CouponLg";
 import MailCoupon from "../coupon/MailCoupon";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

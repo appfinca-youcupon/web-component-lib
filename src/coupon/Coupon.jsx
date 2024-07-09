@@ -71,5 +71,5 @@ Coupon.defaultProps = {
   size: "lg",
   width: 0,
   fullWidth: false,
-  layout: 0,
+  layout: 20,
 };

@@ -1,5 +1,5 @@
 import { fn } from "@storybook/test";
-import CouponLg from "../../web-components/CouponLg";
+import CouponLg from "../../components/CouponLg";
 import Coupon from "../coupon/Coupon";
 import Coupons from "../coupon/Coupons";
 
