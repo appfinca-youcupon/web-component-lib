@@ -8,6 +8,7 @@ import { getSizeConstants } from "./utils/size";
  *    width: number,
  *    fullWidth: boolean,
  *    size: ("sm"|"md"|"lg")
+ *    url: string,
  * }} props
  */
 export const CouponRootStyle = (props) => {
@@ -17,6 +18,7 @@ export const CouponRootStyle = (props) => {
     size = "lg",
     style = {},
     className = "",
+    url = "",
   } = props;
 
   const fontSize = size === "lg" ? "16px" : size === "md" ? "14px" : "10px";
@@ -45,9 +47,18 @@ export const CouponRootStyle = (props) => {
     return defaultMaxWidth;
   }, [size]);
 
+  let clickable = useMemo(() => {
+    return url?.length > 1; //TODO: validate url
+  }, [url]);
+
   return (
     <div
       className={className}
+      onClick={() => {
+        if (clickable) {
+          window.open(url, "_blank").focus();
+        }
+      }}
       style={{
         ...style,
         // width: "400px",
@@ -59,6 +70,7 @@ export const CouponRootStyle = (props) => {
         flexDirection: "row",
         fontSize: fontSize,
         lineHeight: lineHeight,
+        cursor: clickable ? "pointer" : "default",
       }}
     >
       {props.children}
