@@ -256,7 +256,7 @@ export const CouponProductSection = (props) => {
               fontWeight: "500",
               alignItems: "center",
               marginTop: "2px",
-              marginBottom: bottomMargin ? "12px" : 0,
+              marginBottom: bottomMargin && size == "lg" ? "12px" : 0,
             }}
           >
             {isPriceSimplified && !template ? (
