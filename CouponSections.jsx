@@ -142,7 +142,16 @@ export const CouponImage = ({ size, imgUrl }) => {
 };
 
 // TODO
-export const StampDiv = ({ size, shop = "MyShop", layout, color }) => {
+export const StampDiv = ({
+  size,
+  shop = "MyShop",
+  layout,
+  color,
+  template = false,
+}) => {
+  const shopVal = useMemo(() => {
+    return template ? "{SHOP}" : shop;
+  }, [shop, template]);
   const isLightColor = useMemo(() => {
     return getIsLightColor(color);
   }, [color]);
@@ -165,6 +174,7 @@ export const StampDiv = ({ size, shop = "MyShop", layout, color }) => {
 
   return size == "lg" ? (
     <div
+      className="my-0 py-0"
       style={{
         whiteSpace: "nowrap",
         position: "absolute",
@@ -187,7 +197,7 @@ export const StampDiv = ({ size, shop = "MyShop", layout, color }) => {
         zIndex: 1,
       }}
     >
-      <span>{`${shop} • YouCupon`}</span>
+      <span>{`${shopVal} • YouCupon`}</span>
     </div>
   ) : (
     <></>
@@ -240,7 +250,9 @@ export const CouponProductSection = (props) => {
         <div className="h-auto my-0 ax-left">
           <div
             //   className={styles["coupon-product-name-span-" + size]}
+            className="lh-sm fw-500"
             style={{
+              fontWeight: 500,
               ...couponProductNameSpanStyles[size],
             }}
           >
@@ -302,7 +314,8 @@ export const CouponDiscountSection = ({
   }, [discountType, discountValue]);
 
   const formattedExpiration = useMemo(() => {
-    return dayjs(expirationTimestamp).format("MMM DD, YYYY");
+    let formatted = dayjs(expirationTimestamp).format("MMM DD, YYYY");
+    return "By " + formatted;
     // return dayjs(expirationTimestamp).format("YYYY-MM-DD");
     // return `Until ${dayjs(expirationTimestamp).format("MMM DD")}`;
   }, [expirationTimestamp]);
@@ -314,6 +327,17 @@ export const CouponDiscountSection = ({
   const infoTextColor = useMemo(() => {
     return getInfoTextColor(color);
   }, [color]);
+
+  const isDiscountLong = useMemo(() => {
+    if (discountType == "percentage") return false;
+    else {
+      if (Number.isInteger(discountValue)) {
+        return discountValue > 9999;
+      } else {
+        return discountValue?.toString().length > 4;
+      }
+    }
+  }, [discountType, discountValue]);
 
   const bottomRight = layout % 20 >= 10;
 
@@ -330,8 +354,9 @@ export const CouponDiscountSection = ({
       }}
     >
       <div className="stack-col stack-ax-center ax-center">
-        <div className="h-auto my-0 ax-center">
+        <div className="h-auto mt-1 ax-center">
           <div
+            className="stack-row ay-baseline gap-1 ax-center"
             style={{
               // width: "100%",
               display: "flex",
@@ -344,14 +369,15 @@ export const CouponDiscountSection = ({
               // fontWeight: "500",
             }}
           >
-            <span style={{ fontSize: "1.25em" }}>
+            <span style={{ fontSize: isDiscountLong ? "1.25em" : "1.75em" }}>
               <strong>
                 {template ? EMAIL_TEMPLATE_DISCOUNT : formattedDiscount}
               </strong>
             </span>
-            <span style={{ fontSize: "0.75em" }}>OFF</span>
+            <span style={{ fontSize: "0.75em" }}>Off</span>
           </div>
           <span
+            className="w-full text-center ax-center"
             style={{
               fontSize: "0.75em",
               position: bottomRight ? "absolute" : "relative",

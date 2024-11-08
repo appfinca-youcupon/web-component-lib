@@ -72,9 +72,10 @@ const CouponCenter = (props) => {
       size={size}
     >
       <div
+        className="stack-col gap-0"
         style={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: "column",
         }}
       >
         <CouponProductSection {...props} />

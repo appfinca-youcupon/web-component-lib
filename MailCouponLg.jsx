@@ -8,6 +8,7 @@ import {
   CouponDiscountSection,
   CouponImage,
   CouponProductSection,
+  StampDiv,
 } from "./CouponSections";
 import { CouponRootStyle } from "./CouponStyledElements";
 import { getSizeConstants } from "./utils/size";
@@ -20,80 +21,116 @@ const CouponLeft = (props) => {
     }, [size]);
 
   return (
-    <CouponBackgroungPng
-      className="h-full"
-      align="left"
+    <a
+      href="{URL}"
+      // className="h-full"
       style={{
-        display: "flex",
-        width: "35%",
-        justifyContent: "center",
-        maxWidth: `${imageWidth - padding * 2}px`,
+        display: "block",
+        height: "120px",
       }}
-      color="#ffffff"
-      template={props?.template}
     >
-      <div
+      <CouponBackgroungPng
+        className="h-full w-32"
+        align="left"
         style={{
           display: "flex",
-          flexDirection: "row",
+          // width: "35%",
           justifyContent: "center",
+          maxWidth: `${imageWidth - padding * 2}px`,
         }}
+        color="#ffffff"
+        template={props?.template}
       >
-        <CouponImage
-          {...props}
-          imgUrl="https://i.imgur.com/SUeDv6E.jpg"
-          size="lg"
-        />
-      </div>
-    </CouponBackgroungPng>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
+        >
+          <CouponImage
+            {...props}
+            imgUrl="https://i.imgur.com/SUeDv6E.jpg"
+            size="lg"
+          />
+        </div>
+      </CouponBackgroungPng>
+    </a>
   );
 };
 
 const CouponCenter = (props) => {
   return (
-    <CouponBackgroungPng
-      className="h-full"
-      align="center"
-      color="#ffffff"
+    <a
+      href="{URL}"
+      // className="h-full"
       style={{
-        display: "flex",
-        flexGrow: 1,
-        position: "relative",
-        justifyContent: "center",
-        width: "35%",
+        display: "block",
+        height: "120px",
       }}
-      template={props?.template}
     >
-      <div
+      <CouponBackgroungPng
+        className="h-full w-56"
+        align="center"
+        color="#ffffff"
         style={{
           display: "flex",
-          flexDirection: "row",
+          flexGrow: 1,
+          position: "relative",
+          justifyContent: "center",
+          // width: "35%",
         }}
+        template={props?.template}
       >
-        <CouponProductSection {...props} />
-        {/* <StampDiv {...props} /> */}
-      </div>
-    </CouponBackgroungPng>
+        <div
+          className="stack-col h-full px-2 w-full"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <div className="h-auto text-dark mt-2">
+            <div className="stack-col stack-ay-middle">
+              <CouponProductSection {...props} />
+            </div>
+          </div>
+          <div className="my-0 text-right w-full">
+            <StampDiv {...props} layout={40} />
+          </div>
+        </div>
+      </CouponBackgroungPng>
+    </a>
   );
 };
 
 const CouponRight = (props) => {
   return (
-    <CouponBackgroungPng
-      className="h-full"
-      align="right"
-      color={props.color}
+    <a
+      href="{URL}"
+      // className="h-full"
       style={{
-        display: "flex",
-        justifyContent: "center",
-        flexGrow: 0.75,
-        position: "relative",
-        width: "30%",
+        display: "block",
+        height: "120px",
       }}
-      template={props?.template}
     >
-      <CouponDiscountSection {...props} />
-    </CouponBackgroungPng>
+      <CouponBackgroungPng
+        className="h-full w-32"
+        align="right"
+        color={props.color}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexGrow: 0.75,
+          position: "relative",
+          // width: "30%",
+        }}
+        template={props?.template}
+      >
+        <div className="px-1 w-full stack-col stack-ax-center">
+          <CouponDiscountSection {...props} />
+        </div>
+      </CouponBackgroungPng>
+    </a>
   );
 };
 
@@ -114,8 +151,9 @@ const CouponRight = (props) => {
  * }} props
  */
 export default function MailCouponLg(props) {
+  // QWQ: email width?
   return (
-    <CouponRootStyle {...props} className="stack-row stack-ay-middle h-full">
+    <CouponRootStyle {...props} className="stack-row stack-ay-middle my-1">
       <CouponLeft {...props} size="lg" />
       <CouponCenter {...props} size="lg" />
       <CouponRight {...props} size="lg" />
