@@ -1,6 +1,4 @@
 import { fn } from "@storybook/test";
-import CouponLg from "../../components/CouponLg";
-import Coupon from "../coupon/Coupon";
 import Coupons from "../coupon/Coupons";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

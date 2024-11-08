@@ -7,3 +7,9 @@ import MailCouponTemplate from "../coupon/MailCouponTemplate";
 export function render() {
   return ReactDOMServer.renderToString(<MailCouponTemplate />);
 }
+
+export function renderLarge() {
+  return ReactDOMServer.renderToString(
+    <MailCouponTemplate discountValue={999999999} />, //> 4 digit
+  );
+}

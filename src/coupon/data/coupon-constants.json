@@ -47,6 +47,6 @@
         "originPriceTemplate": "{P0}",
         "priceTemplate": "{P1}",
         "discountTemplate": "{OFF}",
-        "expirationTemplate": "{EXPIRATION}"
+        "expirationTemplate": "by {EXPIRATION}"
     }
 }

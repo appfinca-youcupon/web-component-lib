@@ -1,3 +1,4 @@
+import { dummyCouponData } from "./Coupon";
 import MailCouponLg from "./MailCouponLg";
 import PropTypes from "prop-types";
 
@@ -16,7 +17,7 @@ import PropTypes from "prop-types";
  * }} props
  */
 export default function MailCouponTemplate(props) {
-  return <MailCouponLg template={true} />;
+  return <MailCouponLg template={true} {...props} />;
 }
 
 // NOTE: isRequired will only be shown if no default value

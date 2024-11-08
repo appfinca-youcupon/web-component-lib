@@ -3,3 +3,4 @@
 # in command line. (Ruby is required)
 rm build/*
 bootstrap-email -p 'coupon-template.html' -d 'build/'
+bootstrap-email -p 'coupon-template-long.html' -d 'build/'

@@ -165,8 +165,7 @@
       class="preview"
       style="display: none; max-height: 0px; overflow: hidden"
     >
-      Expiring Coupon in {date}&#847; &#8204; &#160; &#847; &#8204; &#160;
-      &#847; &#8204; &#160; &#847; &#8204; &#160; &#847; &#8204; &#160; &#847;
+      Your coupon is about to expire in {date}&#847; &#8204; &#160; &#847;
       &#8204; &#160; &#847; &#8204; &#160; &#847; &#8204; &#160; &#847; &#8204;
       &#160; &#847; &#8204; &#160; &#847; &#8204; &#160; &#847; &#8204; &#160;
       &#847; &#8204; &#160; &#847; &#8204; &#160; &#847; &#8204; &#160; &#847;
@@ -238,10 +237,6 @@
       &#847; &#8204; &#160; &#847; &#8204; &#160; &#847; &#8204; &#160; &#847;
       &#8204; &#160; &#847; &#8204; &#160; &#847; &#8204; &#160; &#847; &#8204;
       &#160; &#847; &#8204; &#160; &#847; &#8204; &#160; &#847; &#8204; &#160;
-      &#847; &#8204; &#160; &#847; &#8204; &#160; &#847; &#8204; &#160; &#847;
-      &#8204; &#160; &#847; &#8204; &#160; &#847; &#8204; &#160; &#847; &#8204;
-      &#160; &#847; &#8204; &#160; &#847; &#8204; &#160; &#847; &#8204; &#160;
-      &#847; &#8204; &#160;
     </div>
     <table
       class="bg-green-300 body"
@@ -280,7 +275,7 @@
             bgcolor="#75b798"
           >
             <table
-              class="container"
+              class="container w-120"
               role="presentation"
               border="0"
               cellpadding="0"
@@ -488,7 +483,7 @@
                                       "
                                       align="left"
                                     >
-                                      Expiring Coupons in Your Wallet
+                                      Your coupons are about to expire
                                     </h1>
                                     <table
                                       class="s-4 w-full"
@@ -528,11 +523,9 @@
                                       "
                                       align="left"
                                     >
-                                      You have saved coupons in your YouCupon
-                                      wallet. To help you save money, here is
-                                      the reminder of your expiring coupons.<br />
-                                      <br />
-                                      <b>Expire in 30 days:</b>
+                                      Your coupons in the wallet are about to
+                                      expire in 30 days. Don&#8217;t miss your
+                                      chance to make the best use of them!
                                     </p>
                                     <table
                                       class="s-4 w-full"
@@ -562,107 +555,280 @@
                                         </tr>
                                       </tbody>
                                     </table>
-                                    <div>{coupon}</div>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                            <br />
-                            <table
-                              class="btn btn-primary p-3 px-4 ax-center fw-700"
-                              role="presentation"
-                              align="center"
-                              border="0"
-                              cellpadding="0"
-                              cellspacing="0"
-                              style="
-                                border-radius: 6px;
-                                border-collapse: separate !important;
-                                font-weight: 700 !important;
-                                margin: 0 auto;
-                              "
-                            >
-                              <tbody>
-                                <tr>
-                                  <td
-                                    style="
-                                      line-height: 24px;
-                                      font-size: 16px;
-                                      border-radius: 6px;
-                                      font-weight: 700 !important;
-                                      margin: 0;
-                                    "
-                                    align="center"
-                                    bgcolor="#0d6efd"
-                                  >
-                                    <a
-                                      style="
-                                        width: 168px;
-                                        background-color: #008060;
-                                        color: #ffffff;
-                                        font-size: 16px;
-                                        font-family: Helvetica, Arial,
-                                          sans-serif;
-                                        text-decoration: none;
-                                        border-radius: 6px;
-                                        line-height: 20px;
-                                        display: block;
-                                        font-weight: 700 !important;
-                                        white-space: nowrap;
-                                        padding: 12px 16px;
-                                        border: 1px solid #0d6efd;
-                                      "
-                                      href="https://www.youcupon.com"
-                                      >See My Wallet</a
+                                    <div class="">{coupon}</div>
+                                    <table
+                                      class="s-4 w-full"
+                                      role="presentation"
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      style="width: 100%"
+                                      width="100%"
                                     >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            style="
+                                              line-height: 16px;
+                                              font-size: 16px;
+                                              width: 100%;
+                                              height: 16px;
+                                              margin: 0;
+                                            "
+                                            align="left"
+                                            width="100%"
+                                            height="16"
+                                          >
+                                            &#160;
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    <table
+                                      class="btn btn-primary p-3 px-4 ax-center fw-700"
+                                      role="presentation"
+                                      align="center"
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      style="
+                                        border-radius: 6px;
+                                        border-collapse: separate !important;
+                                        font-weight: 700 !important;
+                                        margin: 0 auto;
+                                      "
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            style="
+                                              line-height: 24px;
+                                              font-size: 16px;
+                                              border-radius: 6px;
+                                              font-weight: 700 !important;
+                                              margin: 0;
+                                            "
+                                            align="center"
+                                            bgcolor="#0d6efd"
+                                          >
+                                            <a
+                                              style="
+                                                width: 168px;
+                                                background-color: #008060;
+                                                color: #ffffff;
+                                                font-size: 16px;
+                                                font-family: Helvetica, Arial,
+                                                  sans-serif;
+                                                text-decoration: none;
+                                                border-radius: 6px;
+                                                line-height: 20px;
+                                                display: block;
+                                                font-weight: 700 !important;
+                                                white-space: nowrap;
+                                                padding: 12px 16px;
+                                                border: 1px solid #0d6efd;
+                                              "
+                                              href="https://www.youcupon.com"
+                                              >See My Wallet</a
+                                            >
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    <table
+                                      class="s-4 w-full"
+                                      role="presentation"
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      style="width: 100%"
+                                      width="100%"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            style="
+                                              line-height: 16px;
+                                              font-size: 16px;
+                                              width: 100%;
+                                              height: 16px;
+                                              margin: 0;
+                                            "
+                                            align="left"
+                                            width="100%"
+                                            height="16"
+                                          >
+                                            &#160;
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    <p
+                                      class=""
+                                      style="
+                                        line-height: 24px;
+                                        font-size: 16px;
+                                        width: 100%;
+                                        margin: 0;
+                                      "
+                                      align="left"
+                                    >
+                                      Ready to save on your favorites or try
+                                      something new? Check your coupons out
+                                      before they&#8217;re gone!
+                                    </p>
+                                    <table
+                                      class="s-4 w-full"
+                                      role="presentation"
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      style="width: 100%"
+                                      width="100%"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            style="
+                                              line-height: 16px;
+                                              font-size: 16px;
+                                              width: 100%;
+                                              height: 16px;
+                                              margin: 0;
+                                            "
+                                            align="left"
+                                            width="100%"
+                                            height="16"
+                                          >
+                                            &#160;
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    <table
+                                      class="ax-center"
+                                      role="presentation"
+                                      align="center"
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      style="margin: 0 auto"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            style="
+                                              line-height: 24px;
+                                              font-size: 16px;
+                                              margin: 0;
+                                            "
+                                            align="left"
+                                          >
+                                            <a
+                                              class="p-3 px-4 fw-700"
+                                              style="
+                                                width: 400px;
+                                                font-size: 12px;
+                                                color: #888888;
+                                                font-weight: 700 !important;
+                                                padding: 12px 16px;
+                                              "
+                                              href="https://www.youcupon.com"
+                                              >Never recieve this message
+                                              again.</a
+                                            >
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
                                   </td>
                                 </tr>
                               </tbody>
                             </table>
-                            <p
-                              style="
-                                line-height: 24px;
-                                font-size: 16px;
-                                width: 100%;
-                                margin: 0;
-                              "
-                              align="left"
-                            >
-                              Whether you're planning to restock your favorite
-                              products or trying something new, now is the
-                              perfect time to make use of these coupons.
-                            </p>
                             <table
-                              class="ax-center"
+                              class="s-8 w-full"
                               role="presentation"
-                              align="center"
                               border="0"
                               cellpadding="0"
                               cellspacing="0"
-                              style="margin: 0 auto"
+                              style="width: 100%"
+                              width="100%"
                             >
                               <tbody>
                                 <tr>
                                   <td
                                     style="
-                                      line-height: 24px;
-                                      font-size: 16px;
+                                      line-height: 32px;
+                                      font-size: 32px;
+                                      width: 100%;
+                                      height: 32px;
                                       margin: 0;
                                     "
                                     align="left"
+                                    width="100%"
+                                    height="32"
                                   >
-                                    <a
-                                      class="p-3 px-4 fw-700"
-                                      style="
-                                        width: 400px;
-                                        font-size: 12px;
-                                        color: #888888;
-                                        font-weight: 700 !important;
-                                        padding: 12px 16px;
-                                      "
-                                      href="https://www.youcupon.com"
-                                      >Never recieve this message again.</a
-                                    >
+                                    &#160;
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div
+                              class="footer text-cyan-100 text-center"
+                              style="color: #cff4fc"
+                              align="center"
+                            >
+                              &#169; YouCupon by AppFinca Inc.<br />
+                              <a
+                                class="text-cyan-100 fw-600"
+                                href="https://www.youcupon.com/#faq"
+                                style="
+                                  color: #cff4fc;
+                                  font-weight: 600 !important;
+                                "
+                                >FAQ</a
+                              >&#160;&#160;|&#160;&#160;<a
+                                class="text-cyan-100 fw-600"
+                                href="https://flora.appfinca.com/terms"
+                                style="
+                                  color: #cff4fc;
+                                  font-weight: 600 !important;
+                                "
+                                >Terms of Service</a
+                              >&#160;&#160;|&#160;&#160;<a
+                                class="text-cyan-100 fw-600"
+                                href="https://flora.appfinca.com/privacy"
+                                style="
+                                  color: #cff4fc;
+                                  font-weight: 600 !important;
+                                "
+                                >Privacy Policy</a
+                              >
+                            </div>
+                            <table
+                              class="s-8 w-full"
+                              role="presentation"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              style="width: 100%"
+                              width="100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      line-height: 32px;
+                                      font-size: 32px;
+                                      width: 100%;
+                                      height: 32px;
+                                      margin: 0;
+                                    "
+                                    align="left"
+                                    width="100%"
+                                    height="32"
+                                  >
+                                    &#160;
                                   </td>
                                 </tr>
                               </tbody>
@@ -677,85 +843,6 @@
                 </tbody>
               </table>
                     <![endif]-->
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table
-              class="s-8 w-full"
-              role="presentation"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              style="width: 100%"
-              width="100%"
-            >
-              <tbody>
-                <tr>
-                  <td
-                    style="
-                      line-height: 32px;
-                      font-size: 32px;
-                      width: 100%;
-                      height: 32px;
-                      margin: 0;
-                    "
-                    align="left"
-                    width="100%"
-                    height="32"
-                  >
-                    &#160;
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div
-              class="footer text-cyan-100 text-center"
-              style="color: #cff4fc"
-              align="center"
-            >
-              &#169; YouCupon by AppFinca Inc.<br />
-              <a
-                class="text-cyan-100 fw-600"
-                href="https://www.youcupon.com/#faq"
-                style="color: #cff4fc; font-weight: 600 !important"
-                >FAQ</a
-              >&#160;&#160;|&#160;&#160;<a
-                class="text-cyan-100 fw-600"
-                href="https://flora.appfinca.com/terms"
-                style="color: #cff4fc; font-weight: 600 !important"
-                >Terms of Service</a
-              >&#160;&#160;|&#160;&#160;<a
-                class="text-cyan-100 fw-600"
-                href="https://flora.appfinca.com/privacy"
-                style="color: #cff4fc; font-weight: 600 !important"
-                >Privacy Policy</a
-              >
-            </div>
-            <table
-              class="s-8 w-full"
-              role="presentation"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              style="width: 100%"
-              width="100%"
-            >
-              <tbody>
-                <tr>
-                  <td
-                    style="
-                      line-height: 32px;
-                      font-size: 32px;
-                      width: 100%;
-                      height: 32px;
-                      margin: 0;
-                    "
-                    align="left"
-                    width="100%"
-                    height="32"
-                  >
-                    &#160;
                   </td>
                 </tr>
               </tbody>

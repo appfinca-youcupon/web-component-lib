@@ -175,6 +175,7 @@ export const CouponBackgroungPng = (props) => {
       className={props?.className}
       style={{
         ...props?.style,
+        heigth: "120px",
         background:
           template && color != "#ffffff"
             ? `url(${COUPON_BACKGROUND_PNG_TEMPLATE}) ${align}`

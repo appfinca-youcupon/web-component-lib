@@ -8,6 +8,7 @@ const __dirname = dirname(__filename);
 
 const EMAIL_SOURCE = "no-reply@youcupon.com";
 const EMAIL_TARGET = "apple894894@gmail.com";
+// const EMAIL_TARGET = "ytlee@datalab.cs.nthu.edu.tw";
 const EMAIL_SUBJECT = "YouCupon Email Test";
 const EMAIL_CHARSET = "UTF-8";
 
@@ -37,8 +38,7 @@ const couponsData = [
   {
     domain: "datastore88.myshopify.com",
     imgUrl: "https://i.imgur.com/SUeDv6E.jpg",
-    productName:
-      "3rd Very Long Product Name Something Something Something Something Something Something Something Something Something Something Something Something",
+    productName: "3rd Very Long Product Name Something Something Something",
     price: 300,
     originPrice: 400,
     color: "#005090",
@@ -53,6 +53,7 @@ const getCouponHtml = async (data) => {
     path.resolve(__dirname, "./build/coupon-template.html"),
     "utf8",
   );
+  couponTemplate = couponTemplate.replace("PRODUCT_NAME", data.productName);
   return couponTemplate;
 };
 
@@ -67,14 +68,13 @@ const getComposedCouponsHtml = async () => {
 
 const getComposedEmailHtml = async () => {
   let emailTemplate = await fs.readFile(
-    path.resolve(__dirname, "./email-template-simple.html"),
-    // path.resolve(__dirname, "./email-template-customer.html"),
+    // path.resolve(__dirname, "./email-template-simple.html"),
+    path.resolve(__dirname, "./email-template-customer.html"),
     "utf8",
   );
-  emailTemplate = emailTemplate.replace(
-    "{coupon}",
-    await getComposedCouponsHtml(),
-  );
+  const coupons = await getComposedCouponsHtml();
+  emailTemplate = emailTemplate.replace("{coupon}", coupons);
+  // await fs.writeFile("./outQWQ2.txt", emailTemplate);
   return emailTemplate;
 };
 

@@ -25,13 +25,16 @@ async function render() {
   });
 
   // Import the server entry point dynamically
-  let { render } = await import(
+  let { render, renderLarge } = await import(
     "./dist-render/render-email-coupon-template-entry.js"
   );
-  const htmlString = render();
   // console.log(htmlString);
   try {
+    const htmlString = render();
     await fs.writeFile("./email/coupon-template.html", htmlString);
+
+    const htmlStringLg = renderLarge();
+    await fs.writeFile("./email/coupon-template-long.html", htmlStringLg);
   } catch (err) {
     console.error(err);
   }
