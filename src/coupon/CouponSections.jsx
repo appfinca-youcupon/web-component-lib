@@ -246,14 +246,16 @@ export const CouponProductSection = (props) => {
         minWidth: contentWidthMin,
       }}
     >
-      <div className="stack-col stack-ax-center ax-center">
-        <div className="h-auto my-0 ax-left">
+      <div className="stack-col stack-ax-center ax-center w-48">
+        <div className="h-auto my-0 ax-left w-48">
           <div
             //   className={styles["coupon-product-name-span-" + size]}
-            className="lh-sm fw-500"
+            className="lh-sm fw-500 w-48"
             style={{
               fontWeight: 500,
               ...couponProductNameSpanStyles[size],
+              whiteSpace: template ? "wrap" : "normal",
+              display: template ? "block" : "-webkit-box", // QWQ
             }}
           >
             {template ? EMAIL_TEMPLATE_PRODUCT_NAME : productName}
@@ -374,7 +376,9 @@ export const CouponDiscountSection = ({
                 {template ? EMAIL_TEMPLATE_DISCOUNT : formattedDiscount}
               </strong>
             </span>
-            <span style={{ fontSize: "0.75em" }}>Off</span>
+            <span style={{ fontSize: "0.75em" }}>
+              <strong>Off</strong>
+            </span>
           </div>
           <span
             className="w-full text-center ax-center"

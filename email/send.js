@@ -38,7 +38,8 @@ const couponsData = [
   {
     domain: "datastore88.myshopify.com",
     imgUrl: "https://i.imgur.com/SUeDv6E.jpg",
-    productName: "3rd Very Long Product Name Something Something Something",
+    productName:
+      "HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello",
     price: 300,
     originPrice: 400,
     color: "#005090",
@@ -53,7 +54,7 @@ const getCouponHtml = async (data) => {
     path.resolve(__dirname, "./build/coupon-template.html"),
     "utf8",
   );
-  couponTemplate = couponTemplate.replace("PRODUCT_NAME", data.productName);
+  couponTemplate = couponTemplate.replace("{PRODUCT_NAME}", data.productName);
   return couponTemplate;
 };
 

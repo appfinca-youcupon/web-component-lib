@@ -2,606 +2,90 @@
 <html>
   <head>
     <!-- Compiled with Bootstrap Email version: 1.5.1 -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="x-apple-disable-message-reformatting" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="format-detection"
-      content="telephone=no, date=no, address=no, email=no"
-    />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
     <style type="text/css">
-      body,
-      table,
-      td {
-        font-family: Helvetica, Arial, sans-serif !important;
-      }
-      .ExternalClass {
-        width: 100%;
-      }
-      .ExternalClass,
-      .ExternalClass p,
-      .ExternalClass span,
-      .ExternalClass font,
-      .ExternalClass td,
-      .ExternalClass div {
-        line-height: 150%;
-      }
-      a {
-        text-decoration: none;
-      }
-      * {
-        color: inherit;
-      }
-      a[x-apple-data-detectors],
-      u + #body a,
-      #MessageViewBody a {
-        color: inherit;
-        text-decoration: none;
-        font-size: inherit;
-        font-family: inherit;
-        font-weight: inherit;
-        line-height: inherit;
-      }
-      img {
-        -ms-interpolation-mode: bicubic;
-      }
-      table:not([class^="s-"]) {
-        font-family: Helvetica, Arial, sans-serif;
-        mso-table-lspace: 0pt;
-        mso-table-rspace: 0pt;
-        border-spacing: 0px;
-        border-collapse: collapse;
-      }
-      table:not([class^="s-"]) td {
-        border-spacing: 0px;
-        border-collapse: collapse;
-      }
-      @media screen and (max-width: 600px) {
-        .gap-1.row,
-        .gap-x-1.row {
-          margin-right: -4px !important;
-        }
-        .gap-1.row > table > tbody > tr > td,
-        .gap-x-1.row > table > tbody > tr > td {
-          padding-right: 4px !important;
-        }
-        .gap-1.row,
-        .gap-y-1.row {
-          margin-bottom: -4px !important;
-        }
-        .gap-1.row > table > tbody > tr > td,
-        .gap-y-1.row > table > tbody > tr > td {
-          padding-bottom: 4px !important;
-        }
-        .gap-2.row,
-        .gap-x-2.row {
-          margin-right: -8px !important;
-        }
-        .gap-2.row > table > tbody > tr > td,
-        .gap-x-2.row > table > tbody > tr > td {
-          padding-right: 8px !important;
-        }
-        .gap-2.row,
-        .gap-y-2.row {
-          margin-bottom: -8px !important;
-        }
-        .gap-2.row > table > tbody > tr > td,
-        .gap-y-2.row > table > tbody > tr > td {
-          padding-bottom: 8px !important;
-        }
-        table.gap-1.stack-x > tbody > tr > td {
-          padding-right: 4px !important;
-        }
-        table.gap-1.stack-y > tbody > tr > td {
-          padding-bottom: 4px !important;
-        }
-        table.gap-2.stack-x > tbody > tr > td {
-          padding-right: 8px !important;
-        }
-        table.gap-2.stack-y > tbody > tr > td {
-          padding-bottom: 8px !important;
-        }
-        .w-full,
-        .w-full > tbody > tr > td {
-          width: 100% !important;
-        }
-        .w-32,
-        .w-32 > tbody > tr > td {
-          width: 128px !important;
-        }
-        .w-56,
-        .w-56 > tbody > tr > td {
-          width: 224px !important;
-        }
-        .h-full,
-        .h-full > tbody > tr > td {
-          height: 100% !important;
-        }
-        .h-auto,
-        .h-auto > tbody > tr > td {
-          height: auto !important;
-        }
-        .pt-0:not(table),
-        .pt-0:not(.btn) > tbody > tr > td,
-        .pt-0.btn td a,
-        .py-0:not(table),
-        .py-0:not(.btn) > tbody > tr > td,
-        .py-0.btn td a {
-          padding-top: 0 !important;
-        }
-        .pb-0:not(table),
-        .pb-0:not(.btn) > tbody > tr > td,
-        .pb-0.btn td a,
-        .py-0:not(table),
-        .py-0:not(.btn) > tbody > tr > td,
-        .py-0.btn td a {
-          padding-bottom: 0 !important;
-        }
-        .pr-1:not(table),
-        .pr-1:not(.btn) > tbody > tr > td,
-        .pr-1.btn td a,
-        .px-1:not(table),
-        .px-1:not(.btn) > tbody > tr > td,
-        .px-1.btn td a {
-          padding-right: 4px !important;
-        }
-        .pl-1:not(table),
-        .pl-1:not(.btn) > tbody > tr > td,
-        .pl-1.btn td a,
-        .px-1:not(table),
-        .px-1:not(.btn) > tbody > tr > td,
-        .px-1.btn td a {
-          padding-left: 4px !important;
-        }
-        .pr-2:not(table),
-        .pr-2:not(.btn) > tbody > tr > td,
-        .pr-2.btn td a,
-        .px-2:not(table),
-        .px-2:not(.btn) > tbody > tr > td,
-        .px-2.btn td a {
-          padding-right: 8px !important;
-        }
-        .pl-2:not(table),
-        .pl-2:not(.btn) > tbody > tr > td,
-        .pl-2.btn td a,
-        .px-2:not(table),
-        .px-2:not(.btn) > tbody > tr > td,
-        .px-2.btn td a {
-          padding-left: 8px !important;
-        }
-        *[class*="s-lg-"] > tbody > tr > td {
-          font-size: 0 !important;
-          line-height: 0 !important;
-          height: 0 !important;
-        }
-        .s-0 > tbody > tr > td {
-          font-size: 0 !important;
-          line-height: 0 !important;
-          height: 0 !important;
-        }
-        .s-1 > tbody > tr > td {
-          font-size: 4px !important;
-          line-height: 4px !important;
-          height: 4px !important;
-        }
-        .s-2 > tbody > tr > td {
-          font-size: 8px !important;
-          line-height: 8px !important;
-          height: 8px !important;
-        }
-      }
+      body,table,td{font-family:Helvetica,Arial,sans-serif !important}.ExternalClass{width:100%}.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{line-height:150%}a{text-decoration:none}*{color:inherit}a[x-apple-data-detectors],u+#body a,#MessageViewBody a{color:inherit;text-decoration:none;font-size:inherit;font-family:inherit;font-weight:inherit;line-height:inherit}img{-ms-interpolation-mode:bicubic}table:not([class^=s-]){font-family:Helvetica,Arial,sans-serif;mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px;border-collapse:collapse}table:not([class^=s-]) td{border-spacing:0px;border-collapse:collapse}@media screen and (max-width: 600px){.gap-1.row,.gap-x-1.row{margin-right:-4px !important}.gap-1.row>table>tbody>tr>td,.gap-x-1.row>table>tbody>tr>td{padding-right:4px !important}.gap-1.row,.gap-y-1.row{margin-bottom:-4px !important}.gap-1.row>table>tbody>tr>td,.gap-y-1.row>table>tbody>tr>td{padding-bottom:4px !important}.gap-2.row,.gap-x-2.row{margin-right:-8px !important}.gap-2.row>table>tbody>tr>td,.gap-x-2.row>table>tbody>tr>td{padding-right:8px !important}.gap-2.row,.gap-y-2.row{margin-bottom:-8px !important}.gap-2.row>table>tbody>tr>td,.gap-y-2.row>table>tbody>tr>td{padding-bottom:8px !important}table.gap-1.stack-x>tbody>tr>td{padding-right:4px !important}table.gap-1.stack-y>tbody>tr>td{padding-bottom:4px !important}table.gap-2.stack-x>tbody>tr>td{padding-right:8px !important}table.gap-2.stack-y>tbody>tr>td{padding-bottom:8px !important}.w-full,.w-full>tbody>tr>td{width:100% !important}.w-32,.w-32>tbody>tr>td{width:128px !important}.w-48,.w-48>tbody>tr>td{width:192px !important}.w-56,.w-56>tbody>tr>td{width:224px !important}.h-full,.h-full>tbody>tr>td{height:100% !important}.h-auto,.h-auto>tbody>tr>td{height:auto !important}.pt-0:not(table),.pt-0:not(.btn)>tbody>tr>td,.pt-0.btn td a,.py-0:not(table),.py-0:not(.btn)>tbody>tr>td,.py-0.btn td a{padding-top:0 !important}.pb-0:not(table),.pb-0:not(.btn)>tbody>tr>td,.pb-0.btn td a,.py-0:not(table),.py-0:not(.btn)>tbody>tr>td,.py-0.btn td a{padding-bottom:0 !important}.pr-1:not(table),.pr-1:not(.btn)>tbody>tr>td,.pr-1.btn td a,.px-1:not(table),.px-1:not(.btn)>tbody>tr>td,.px-1.btn td a{padding-right:4px !important}.pl-1:not(table),.pl-1:not(.btn)>tbody>tr>td,.pl-1.btn td a,.px-1:not(table),.px-1:not(.btn)>tbody>tr>td,.px-1.btn td a{padding-left:4px !important}.pr-2:not(table),.pr-2:not(.btn)>tbody>tr>td,.pr-2.btn td a,.px-2:not(table),.px-2:not(.btn)>tbody>tr>td,.px-2.btn td a{padding-right:8px !important}.pl-2:not(table),.pl-2:not(.btn)>tbody>tr>td,.pl-2.btn td a,.px-2:not(table),.px-2:not(.btn)>tbody>tr>td,.px-2.btn td a{padding-left:8px !important}*[class*=s-lg-]>tbody>tr>td{font-size:0 !important;line-height:0 !important;height:0 !important}.s-0>tbody>tr>td{font-size:0 !important;line-height:0 !important;height:0 !important}.s-1>tbody>tr>td{font-size:4px !important;line-height:4px !important;height:4px !important}.s-2>tbody>tr>td{font-size:8px !important;line-height:8px !important;height:8px !important}}
     </style>
   </head>
-  <body
-    style="
-      outline: 0;
-      width: 100%;
-      min-width: 100%;
-      height: 100%;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-      font-family: Helvetica, Arial, sans-serif;
-      line-height: 24px;
-      font-weight: normal;
-      font-size: 16px;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      color: #000000;
-      margin: 0;
-      padding: 0;
-      border-width: 0;
-    "
-    bgcolor="#ffffff"
-  >
-    <table
-      class="body"
-      valign="top"
-      role="presentation"
-      border="0"
-      cellpadding="0"
-      cellspacing="0"
-      style="
-        outline: 0;
-        width: 100%;
-        min-width: 100%;
-        height: 100%;
-        -webkit-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-        font-family: Helvetica, Arial, sans-serif;
-        line-height: 24px;
-        font-weight: normal;
-        font-size: 16px;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        color: #000000;
-        margin: 0;
-        padding: 0;
-        border-width: 0;
-      "
-      bgcolor="#ffffff"
-    >
+  <body style="outline: 0; width: 100%; min-width: 100%; height: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Helvetica, Arial, sans-serif; line-height: 24px; font-weight: normal; font-size: 16px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; color: #000000; margin: 0; padding: 0; border-width: 0;" bgcolor="#ffffff">
+    <table class="body" valign="top" role="presentation" border="0" cellpadding="0" cellspacing="0" style="outline: 0; width: 100%; min-width: 100%; height: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Helvetica, Arial, sans-serif; line-height: 24px; font-weight: normal; font-size: 16px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; color: #000000; margin: 0; padding: 0; border-width: 0;" bgcolor="#ffffff">
       <tbody>
         <tr>
-          <td
-            valign="top"
-            style="line-height: 24px; font-size: 16px; margin: 0"
-            align="left"
-          >
-            <table
-              class="s-1 w-full"
-              role="presentation"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              style="width: 100%"
-              width="100%"
-            >
+          <td valign="top" style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+            <table class="s-1 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
               <tbody>
                 <tr>
-                  <td
-                    style="
-                      line-height: 4px;
-                      font-size: 4px;
-                      width: 100%;
-                      height: 4px;
-                      margin: 0;
-                    "
-                    align="left"
-                    width="100%"
-                    height="4"
-                  >
+                  <td style="line-height: 4px; font-size: 4px; width: 100%; height: 4px; margin: 0;" align="left" width="100%" height="4">
                     &#160;
                   </td>
                 </tr>
               </tbody>
             </table>
-            <table
-              class="stack-row stack-ay-middle"
-              role="presentation"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-            >
+            <table class="stack-row stack-ay-middle" role="presentation" border="0" cellpadding="0" cellspacing="0">
               <tbody>
                 <tr>
-                  <td
-                    class="stack-cell"
-                    style="line-height: 24px; font-size: 16px; margin: 0"
-                    align="left"
-                    valign="middle"
-                  >
-                    <a
-                      href="{URL}"
-                      style="display: block; height: 120px; color: #0d6efd"
-                    >
-                      <div
-                        class="h-full w-32"
-                        style="
-                          display: flex;
-                          justify-content: center;
-                          max-width: 96px;
-                          heigth: 120px;
-                          -premailer-width: 128;
-                          width: 128px;
-                          -premailer-height: 100%;
-                          height: 100%;
-                          background: url(https://d1jpaqhc31andn.cloudfront.net/coupons/coupon-ffffff.png)
-                            left;
-                        "
-                      >
-                        <div
-                          style="
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: center;
-                          "
-                        >
-                          <div
-                            style="
-                              max-width: 96px;
-                              display: flex;
-                              justify-content: center;
-                              align-items: center;
-                              padding-left: 0px;
-                              padding-top: 0px;
-                              margin: 8px 0 8px 8px;
-                            "
-                          >
-                            <img
-                              src="https://i.imgur.com/SUeDv6E.jpg"
-                              style="
-                                width: 100%;
-                                max-width: 100%;
-                                max-height: 100%;
-                                object-fit: cover;
-                                height: auto;
-                                line-height: 100%;
-                                outline: none;
-                                text-decoration: none;
-                                display: block;
-                                border-style: none;
-                                border-width: 0;
-                              "
-                            />
-                          </div>
+                  <td class="stack-cell" style="line-height: 24px; font-size: 16px; margin: 0;" align="left" valign="middle">
+                    <a href="{URL}" style="display: block; height: 120px; color: #0d6efd;">
+                      <div class="h-full w-32" style="display: flex; justify-content: center; max-width: 96px; heigth: 120px; -premailer-width: 128; width: 128px; -premailer-height: 100%; height: 100%; background: url(https://d1jpaqhc31andn.cloudfront.net/coupons/coupon-ffffff.png) left;">
+                        <div style="display: flex; flex-direction: row; justify-content: center;">
+                          <div style="max-width: 96px; display: flex; justify-content: center; align-items: center; padding-left: 0px; padding-top: 0px; margin: 8px 0 8px 8px;"><img src="https://i.imgur.com/SUeDv6E.jpg" style="width: 100%; max-width: 100%; max-height: 100%; object-fit: cover; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; border-style: none; border-width: 0;"></div>
                         </div>
                       </div>
                     </a>
                   </td>
-                  <td
-                    class="stack-cell"
-                    style="line-height: 24px; font-size: 16px; margin: 0"
-                    align="left"
-                    valign="middle"
-                  >
-                    <a
-                      href="{URL}"
-                      style="display: block; height: 120px; color: #0d6efd"
-                    >
-                      <div
-                        class="h-full w-56"
-                        style="
-                          display: flex;
-                          flex-grow: 1;
-                          position: relative;
-                          justify-content: center;
-                          heigth: 120px;
-                          -premailer-width: 224;
-                          width: 224px;
-                          -premailer-height: 100%;
-                          height: 100%;
-                          background: url(https://d1jpaqhc31andn.cloudfront.net/coupons/coupon-ffffff.png)
-                            center;
-                        "
-                      >
-                        <table
-                          class="stack-col h-full px-2 w-full"
-                          role="presentation"
-                          border="0"
-                          cellpadding="0"
-                          cellspacing="0"
-                          style="width: 100%; height: 100%"
-                          width="100%"
-                          height="100%"
-                        >
+                  <td class="stack-cell" style="line-height: 24px; font-size: 16px; margin: 0;" align="left" valign="middle">
+                    <a href="{URL}" style="display: block; height: 120px; color: #0d6efd;">
+                      <div class="h-full w-56" style="display: flex; flex-grow: 1; position: relative; justify-content: center; heigth: 120px; -premailer-width: 224; width: 224px; -premailer-height: 100%; height: 100%; background: url(https://d1jpaqhc31andn.cloudfront.net/coupons/coupon-ffffff.png) center;">
+                        <table class="stack-col h-full px-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%;" width="100%" height="100%">
                           <tbody>
                             <tr>
-                              <td
-                                style="
-                                  line-height: 24px;
-                                  font-size: 16px;
-                                  width: 100%;
-                                  height: 100%;
-                                  padding-right: 8px;
-                                  padding-left: 8px;
-                                  margin: 0;
-                                "
-                                align="left"
-                                width="100%"
-                                height="100%"
-                              >
-                                <table
-                                  class="s-2 w-full"
-                                  role="presentation"
-                                  border="0"
-                                  cellpadding="0"
-                                  cellspacing="0"
-                                  style="width: 100%"
-                                  width="100%"
-                                >
+                              <td style="line-height: 24px; font-size: 16px; width: 100%; height: 100%; padding-right: 8px; padding-left: 8px; margin: 0;" align="left" width="100%" height="100%">
+                                <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                   <tbody>
                                     <tr>
-                                      <td
-                                        style="
-                                          line-height: 8px;
-                                          font-size: 8px;
-                                          width: 100%;
-                                          height: 8px;
-                                          margin: 0;
-                                        "
-                                        align="left"
-                                        width="100%"
-                                        height="8"
-                                      >
+                                      <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
                                         &#160;
                                       </td>
                                     </tr>
                                   </tbody>
                                 </table>
-                                <div
-                                  class="h-auto text-dark"
-                                  style="
-                                    color: #1a202c;
-                                    -premailer-height: auto;
-                                    height: auto;
-                                  "
-                                >
-                                  <table
-                                    class="stack-col stack-ay-middle"
-                                    role="presentation"
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                  >
+                                <div class="h-auto text-dark" style="color: #1a202c; -premailer-height: auto; height: auto;">
+                                  <table class="stack-col stack-ay-middle" role="presentation" border="0" cellpadding="0" cellspacing="0">
                                     <tbody>
                                       <tr>
-                                        <td
-                                          style="
-                                            line-height: 24px;
-                                            font-size: 16px;
-                                            margin: 0;
-                                          "
-                                          align="left"
-                                          valign="middle"
-                                        >
-                                          <div
-                                            style="
-                                              display: flex;
-                                              flex-direction: column;
-                                              flex-grow: 1;
-                                              justify-content: center;
-                                              align-items: center;
-                                              padding-left: 8px;
-                                              padding-right: 8px;
-                                              min-width: 100px;
-                                            "
-                                            align="center"
-                                          >
-                                            <table
-                                              class="stack-col stack-ax-center ax-center"
-                                              role="presentation"
-                                              align="center"
-                                              border="0"
-                                              cellpadding="0"
-                                              cellspacing="0"
-                                              style="margin: 0 auto"
-                                            >
+                                        <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left" valign="middle">
+                                          <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; align-items: center; padding-left: 8px; padding-right: 8px; min-width: 100px;" align="center">
+                                            <table class="stack-col stack-ax-center ax-center w-48" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 192px; margin: 0 auto;" width="192">
                                               <tbody>
                                                 <tr>
-                                                  <td
-                                                    style="
-                                                      line-height: 24px;
-                                                      font-size: 16px;
-                                                      margin: 0;
-                                                    "
-                                                    align="center"
-                                                  >
-                                                    <table
-                                                      class="s-0 w-full"
-                                                      role="presentation"
-                                                      border="0"
-                                                      cellpadding="0"
-                                                      cellspacing="0"
-                                                      style="width: 100%"
-                                                      width="100%"
-                                                    >
+                                                  <td style="line-height: 24px; font-size: 16px; width: 192px; margin: 0;" align="center" width="192">
+                                                    <table class="s-0 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                                       <tbody>
                                                         <tr>
-                                                          <td
-                                                            style="
-                                                              line-height: 0;
-                                                              font-size: 0;
-                                                              width: 100%;
-                                                              height: 0;
-                                                              margin: 0;
-                                                            "
-                                                            align="left"
-                                                            width="100%"
-                                                            height="0"
-                                                          >
+                                                          <td style="line-height: 0; font-size: 0; width: 100%; height: 0; margin: 0;" align="left" width="100%" height="0">
                                                             &#160;
                                                           </td>
                                                         </tr>
                                                       </tbody>
                                                     </table>
-                                                    <table
-                                                      class="ax-left"
-                                                      role="presentation"
-                                                      align="left"
-                                                      border="0"
-                                                      cellpadding="0"
-                                                      cellspacing="0"
-                                                    >
+                                                    <table class="ax-left" role="presentation" align="left" border="0" cellpadding="0" cellspacing="0">
                                                       <tbody>
                                                         <tr>
-                                                          <td
-                                                            style="
-                                                              line-height: 24px;
-                                                              font-size: 16px;
-                                                              margin: 0;
-                                                            "
-                                                            align="left"
-                                                          >
-                                                            <div
-                                                              class="h-auto"
-                                                              style="
-                                                                -premailer-height: auto;
-                                                                height: auto;
-                                                              "
-                                                            >
-                                                              <div
-                                                                class="lh-sm fw-500"
-                                                                style="
-                                                                  font-weight: 500 !important;
-                                                                  width: 100%;
-                                                                  gap: 2px;
-                                                                  overflow: hidden;
-                                                                  text-overflow: ellipsis;
-                                                                  white-space: normal;
-                                                                  display: -webkit-box;
-                                                                  -webkit-line-clamp: 3;
-                                                                  -webkit-box-orient: vertical;
-                                                                  line-height: 1.25;
-                                                                "
-                                                                align="left"
-                                                              >
-                                                                {PRODUCT_NAME}
-                                                              </div>
-                                                              <table
-                                                                class="stack-row gap-2"
-                                                                role="presentation"
-                                                                border="0"
-                                                                cellpadding="0"
-                                                                cellspacing="0"
-                                                              >
+                                                          <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+                                                            <div class="h-auto   w-48" style="-premailer-width: 192; width: 192px; -premailer-height: auto; height: auto;">
+                                                              <div class="lh-sm fw-500 w-48" style="font-weight: 500 !important; width: 100%; gap: 2px; overflow: hidden; text-overflow: ellipsis; white-space: wrap; display: block; -webkit-line-clamp: 3; -webkit-box-orient: vertical; -premailer-width: 192; line-height: 1.25;" align="left">{PRODUCT_NAME}</div>
+                                                              <table class="stack-row gap-2" role="presentation" border="0" cellpadding="0" cellspacing="0">
                                                                 <tbody>
                                                                   <tr>
-                                                                    <td
-                                                                      class="stack-cell"
-                                                                      style="
-                                                                        line-height: 24px;
-                                                                        font-size: 16px;
-                                                                        padding-right: 8px;
-                                                                        margin: 0;
-                                                                      "
-                                                                      align="left"
-                                                                      valign="top"
-                                                                    >
-                                                                      <span
-                                                                        style="
-                                                                          text-decoration: line-through;
-                                                                          color: gray;
-                                                                        "
-                                                                        >{P0}</span
-                                                                      >
+                                                                    <td class="stack-cell" style="line-height: 24px; font-size: 16px; padding-right: 8px; margin: 0;" align="left" valign="top">
+                                                                      <span style="text-decoration: line-through; color: gray;">{P0}</span>
                                                                     </td>
-                                                                    <td
-                                                                      class="stack-cell"
-                                                                      style="
-                                                                        line-height: 24px;
-                                                                        font-size: 16px;
-                                                                        padding-right: 0;
-                                                                        margin: 0;
-                                                                      "
-                                                                      align="left"
-                                                                      valign="top"
-                                                                    >
-                                                                      <span
-                                                                        >{P1}</span
-                                                                      >
+                                                                    <td class="stack-cell" style="line-height: 24px; font-size: 16px; padding-right: 0; margin: 0;" align="left" valign="top">
+                                                                      <span>{P1}</span>
                                                                     </td>
                                                                   </tr>
                                                                 </tbody>
@@ -611,29 +95,10 @@
                                                         </tr>
                                                       </tbody>
                                                     </table>
-                                                    <table
-                                                      class="s-0 w-full"
-                                                      role="presentation"
-                                                      border="0"
-                                                      cellpadding="0"
-                                                      cellspacing="0"
-                                                      style="width: 100%"
-                                                      width="100%"
-                                                    >
+                                                    <table class="s-0 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                                       <tbody>
                                                         <tr>
-                                                          <td
-                                                            style="
-                                                              line-height: 0;
-                                                              font-size: 0;
-                                                              width: 100%;
-                                                              height: 0;
-                                                              margin: 0;
-                                                            "
-                                                            align="left"
-                                                            width="100%"
-                                                            height="0"
-                                                          >
+                                                          <td style="line-height: 0; font-size: 0; width: 100%; height: 0; margin: 0;" align="left" width="100%" height="0">
                                                             &#160;
                                                           </td>
                                                         </tr>
@@ -652,174 +117,49 @@
                               </td>
                             </tr>
                             <tr>
-                              <td
-                                style="
-                                  line-height: 24px;
-                                  font-size: 16px;
-                                  width: 100%;
-                                  height: 100%;
-                                  padding-right: 8px;
-                                  padding-left: 8px;
-                                  margin: 0;
-                                "
-                                align="left"
-                                width="100%"
-                                height="100%"
-                              >
-                                <table
-                                  class="s-0 w-full"
-                                  role="presentation"
-                                  border="0"
-                                  cellpadding="0"
-                                  cellspacing="0"
-                                  style="width: 100%"
-                                  width="100%"
-                                >
+                              <td style="line-height: 24px; font-size: 16px; width: 100%; height: 100%; padding-right: 8px; padding-left: 8px; margin: 0;" align="left" width="100%" height="100%">
+                                <table class="s-0 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                   <tbody>
                                     <tr>
-                                      <td
-                                        style="
-                                          line-height: 0;
-                                          font-size: 0;
-                                          width: 100%;
-                                          height: 0;
-                                          margin: 0;
-                                        "
-                                        align="left"
-                                        width="100%"
-                                        height="0"
-                                      >
+                                      <td style="line-height: 0; font-size: 0; width: 100%; height: 0; margin: 0;" align="left" width="100%" height="0">
                                         &#160;
                                       </td>
                                     </tr>
                                   </tbody>
                                 </table>
-                                <div
-                                  class="text-right w-full"
-                                  style="-premailer-width: 100%; width: 100%"
-                                  align="right"
-                                >
-                                  <table
-                                    class="s-0 w-full"
-                                    role="presentation"
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    style="width: 100%"
-                                    width="100%"
-                                  >
+                                <div class="text-right w-full" style="-premailer-width: 100%; width: 100%;" align="right">
+                                  <table class="s-0 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                     <tbody>
                                       <tr>
-                                        <td
-                                          style="
-                                            line-height: 0;
-                                            font-size: 0;
-                                            width: 100%;
-                                            height: 0;
-                                            margin: 0;
-                                          "
-                                          align="left"
-                                          width="100%"
-                                          height="0"
-                                        >
+                                        <td style="line-height: 0; font-size: 0; width: 100%; height: 0; margin: 0;" align="left" width="100%" height="0">
                                           &#160;
                                         </td>
                                       </tr>
                                     </tbody>
                                   </table>
-                                  <table
-                                    class="py-0"
-                                    role="presentation"
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                  >
+                                  <table class="py-0" role="presentation" border="0" cellpadding="0" cellspacing="0">
                                     <tbody>
                                       <tr>
-                                        <td
-                                          style="
-                                            line-height: 24px;
-                                            font-size: 16px;
-                                            padding-top: 0;
-                                            padding-bottom: 0;
-                                            margin: 0;
-                                          "
-                                          align="left"
-                                        >
-                                          <div
-                                            class=""
-                                            style="
-                                              white-space: nowrap;
-                                              position: absolute;
-                                              left: auto;
-                                              top: auto;
-                                              right: 8px;
-                                              bottom: 0px;
-                                              font-size: 10px;
-                                              background-color: transparent;
-                                              color: #878787;
-                                              z-index: 1;
-                                              padding: 2px;
-                                            "
-                                          >
-                                            <span>{SHOP} &#8226; YouCupon</span>
-                                          </div>
+                                        <td style="line-height: 24px; font-size: 16px; padding-top: 0; padding-bottom: 0; margin: 0;" align="left">
+                                          <div class="" style="white-space: nowrap; position: absolute; left: auto; top: auto; right: 8px; bottom: 0px; font-size: 10px; background-color: transparent; color: #878787; z-index: 1; padding: 2px;"><span>{SHOP} &#8226; YouCupon</span></div>
                                         </td>
                                       </tr>
                                     </tbody>
                                   </table>
-                                  <table
-                                    class="s-0 w-full"
-                                    role="presentation"
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    style="width: 100%"
-                                    width="100%"
-                                  >
+                                  <table class="s-0 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                     <tbody>
                                       <tr>
-                                        <td
-                                          style="
-                                            line-height: 0;
-                                            font-size: 0;
-                                            width: 100%;
-                                            height: 0;
-                                            margin: 0;
-                                          "
-                                          align="left"
-                                          width="100%"
-                                          height="0"
-                                        >
+                                        <td style="line-height: 0; font-size: 0; width: 100%; height: 0; margin: 0;" align="left" width="100%" height="0">
                                           &#160;
                                         </td>
                                       </tr>
                                     </tbody>
                                   </table>
                                 </div>
-                                <table
-                                  class="s-0 w-full"
-                                  role="presentation"
-                                  border="0"
-                                  cellpadding="0"
-                                  cellspacing="0"
-                                  style="width: 100%"
-                                  width="100%"
-                                >
+                                <table class="s-0 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                   <tbody>
                                     <tr>
-                                      <td
-                                        style="
-                                          line-height: 0;
-                                          font-size: 0;
-                                          width: 100%;
-                                          height: 0;
-                                          margin: 0;
-                                        "
-                                        align="left"
-                                        width="100%"
-                                        height="0"
-                                      >
+                                      <td style="line-height: 0; font-size: 0; width: 100%; height: 0; margin: 0;" align="left" width="100%" height="0">
                                         &#160;
                                       </td>
                                     </tr>
@@ -832,232 +172,49 @@
                       </div>
                     </a>
                   </td>
-                  <td
-                    class="stack-cell"
-                    style="line-height: 24px; font-size: 16px; margin: 0"
-                    align="left"
-                    valign="middle"
-                  >
-                    <a
-                      href="{URL}"
-                      style="display: block; height: 120px; color: #0d6efd"
-                    >
-                      <div
-                        class="h-full w-32"
-                        style="
-                          display: flex;
-                          justify-content: center;
-                          flex-grow: 0.75;
-                          position: relative;
-                          heigth: 120px;
-                          -premailer-width: 128;
-                          width: 128px;
-                          -premailer-height: 100%;
-                          height: 100%;
-                          background: url(https://d1jpaqhc31andn.cloudfront.net/coupons/coupon-default.png)
-                            right;
-                        "
-                      >
-                        <table
-                          class="px-1 w-full stack-col stack-ax-center"
-                          role="presentation"
-                          border="0"
-                          cellpadding="0"
-                          cellspacing="0"
-                          style="width: 100%"
-                          width="100%"
-                        >
+                  <td class="stack-cell" style="line-height: 24px; font-size: 16px; margin: 0;" align="left" valign="middle">
+                    <a href="{URL}" style="display: block; height: 120px; color: #0d6efd;">
+                      <div class="h-full w-32" style="display: flex; justify-content: center; flex-grow: 0.75; position: relative; heigth: 120px; -premailer-width: 128; width: 128px; -premailer-height: 100%; height: 100%; background: url(https://d1jpaqhc31andn.cloudfront.net/coupons/coupon-default.png) right;">
+                        <table class="px-1 w-full stack-col stack-ax-center" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                           <tbody>
                             <tr>
-                              <td
-                                style="
-                                  line-height: 24px;
-                                  font-size: 16px;
-                                  width: 100%;
-                                  padding-right: 4px;
-                                  padding-left: 4px;
-                                  margin: 0;
-                                "
-                                align="center"
-                                width="100%"
-                              >
-                                <div
-                                  style="
-                                    display: flex;
-                                    flex-direction: column;
-                                    justify-content: center;
-                                    align-items: center;
-                                    color: white;
-                                    gap: 2px;
-                                    padding-right: 8px;
-                                    padding-left: 4px;
-                                    min-width: 85px;
-                                    height: 120px;
-                                  "
-                                  align="center"
-                                >
-                                  <table
-                                    class="stack-col stack-ax-center ax-center"
-                                    role="presentation"
-                                    align="center"
-                                    border="0"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    style="margin: 0 auto"
-                                  >
+                              <td style="line-height: 24px; font-size: 16px; width: 100%; padding-right: 4px; padding-left: 4px; margin: 0;" align="center" width="100%">
+                                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; gap: 2px; padding-right: 8px; padding-left: 4px; min-width: 85px; height: 120px;" align="center">
+                                  <table class="stack-col stack-ax-center ax-center" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
                                     <tbody>
                                       <tr>
-                                        <td
-                                          style="
-                                            line-height: 24px;
-                                            font-size: 16px;
-                                            margin: 0;
-                                          "
-                                          align="center"
-                                        >
-                                          <table
-                                            class="s-1 w-full"
-                                            role="presentation"
-                                            border="0"
-                                            cellpadding="0"
-                                            cellspacing="0"
-                                            style="width: 100%"
-                                            width="100%"
-                                          >
+                                        <td style="line-height: 24px; font-size: 16px; margin: 0;" align="center">
+                                          <table class="s-1 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                             <tbody>
                                               <tr>
-                                                <td
-                                                  style="
-                                                    line-height: 4px;
-                                                    font-size: 4px;
-                                                    width: 100%;
-                                                    height: 4px;
-                                                    margin: 0;
-                                                  "
-                                                  align="left"
-                                                  width="100%"
-                                                  height="4"
-                                                >
+                                                <td style="line-height: 4px; font-size: 4px; width: 100%; height: 4px; margin: 0;" align="left" width="100%" height="4">
                                                   &#160;
                                                 </td>
                                               </tr>
                                             </tbody>
                                           </table>
-                                          <table
-                                            class="ax-center"
-                                            role="presentation"
-                                            align="center"
-                                            border="0"
-                                            cellpadding="0"
-                                            cellspacing="0"
-                                            style="margin: 0 auto"
-                                          >
+                                          <table class="ax-center" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
                                             <tbody>
                                               <tr>
-                                                <td
-                                                  style="
-                                                    line-height: 24px;
-                                                    font-size: 16px;
-                                                    margin: 0;
-                                                  "
-                                                  align="left"
-                                                >
-                                                  <div
-                                                    class="h-auto"
-                                                    style="
-                                                      -premailer-height: auto;
-                                                      height: auto;
-                                                    "
-                                                  >
-                                                    <table
-                                                      class="stack-row ay-baseline gap-1 ax-center"
-                                                      role="presentation"
-                                                      align="center"
-                                                      border="0"
-                                                      cellpadding="0"
-                                                      cellspacing="0"
-                                                      style="
-                                                        vertical-align: baseline !important;
-                                                        margin: 0 auto;
-                                                      "
-                                                    >
+                                                <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+                                                  <div class="h-auto" style="-premailer-height: auto; height: auto;">
+                                                    <table class="stack-row ay-baseline gap-1 ax-center" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="vertical-align: baseline !important; margin: 0 auto;">
                                                       <tbody>
                                                         <tr>
-                                                          <td
-                                                            class="stack-cell"
-                                                            style="
-                                                              line-height: 24px;
-                                                              font-size: 16px;
-                                                              padding-right: 4px;
-                                                              margin: 0;
-                                                            "
-                                                            align="left"
-                                                            valign="baseline"
-                                                          >
-                                                            <span
-                                                              style="
-                                                                font-size: 1.75em;
-                                                              "
-                                                              ><strong
-                                                                >{OFF}</strong
-                                                              ></span
-                                                            >
+                                                          <td class="stack-cell" style="line-height: 24px; font-size: 16px; padding-right: 4px; margin: 0;" align="left" valign="baseline">
+                                                            <span style="font-size: 1.75em;"><strong>{OFF}</strong></span>
                                                           </td>
-                                                          <td
-                                                            class="stack-cell"
-                                                            style="
-                                                              line-height: 24px;
-                                                              font-size: 16px;
-                                                              padding-right: 0;
-                                                              margin: 0;
-                                                            "
-                                                            align="left"
-                                                            valign="baseline"
-                                                          >
-                                                            <span
-                                                              style="
-                                                                font-size: 0.75em;
-                                                              "
-                                                              >Off</span
-                                                            >
+                                                          <td class="stack-cell" style="line-height: 24px; font-size: 16px; padding-right: 0; margin: 0;" align="left" valign="baseline">
+                                                            <span style="font-size: 0.75em;"><strong>Off</strong></span>
                                                           </td>
                                                         </tr>
                                                       </tbody>
                                                     </table>
-                                                    <table
-                                                      class="ax-center"
-                                                      role="presentation"
-                                                      align="center"
-                                                      border="0"
-                                                      cellpadding="0"
-                                                      cellspacing="0"
-                                                      style="margin: 0 auto"
-                                                    >
+                                                    <table class="ax-center" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
                                                       <tbody>
                                                         <tr>
-                                                          <td
-                                                            style="
-                                                              line-height: 24px;
-                                                              font-size: 16px;
-                                                              margin: 0;
-                                                            "
-                                                            align="left"
-                                                          >
-                                                            <span
-                                                              class="w-full text-center"
-                                                              style="
-                                                                font-size: 0.75em;
-                                                                position: relative;
-                                                                display: flex;
-                                                                bottom: auto;
-                                                                right: auto;
-                                                                -premailer-width: 100%;
-                                                                width: 100%;
-                                                                text-align: center !important;
-                                                              "
-                                                              >by
-                                                              {EXPIRATION}</span
-                                                            >
+                                                          <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+                                                            <span class="w-full text-center" style="font-size: 0.75em; position: relative; display: flex; bottom: auto; right: auto; -premailer-width: 100%; width: 100%; text-align: center !important;">by {EXPIRATION}</span>
                                                           </td>
                                                         </tr>
                                                       </tbody>
@@ -1082,29 +239,10 @@
                 </tr>
               </tbody>
             </table>
-            <table
-              class="s-1 w-full"
-              role="presentation"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              style="width: 100%"
-              width="100%"
-            >
+            <table class="s-1 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
               <tbody>
                 <tr>
-                  <td
-                    style="
-                      line-height: 4px;
-                      font-size: 4px;
-                      width: 100%;
-                      height: 4px;
-                      margin: 0;
-                    "
-                    align="left"
-                    width="100%"
-                    height="4"
-                  >
+                  <td style="line-height: 4px; font-size: 4px; width: 100%; height: 4px; margin: 0;" align="left" width="100%" height="4">
                     &#160;
                   </td>
                 </tr>

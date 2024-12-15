@@ -5,10 +5,11 @@ export const dummyCouponData = {
   domain: "datastore88.myshopify.com",
   imgUrl: "https://i.imgur.com/SUeDv6E.jpg",
   productName: "Test Product 1",
-  price: 300,
-  originPrice: 400,
+  price: "300",
+  originPrice: "400",
   color: "#005090",
   expiration: "Oct 12, 2023",
+  expirationTimestamp: 0,
   discountType: "percentage",
   discountValue: 5,
 };
@@ -30,8 +31,10 @@ export const dummyCouponData = {
  *    width: number,
  *    fullWidth: boolean,
  *    layout: number,
+ *    shop: string,
  * }} props
  */
+
 export default function Coupon(props) {
   const { size } = props;
   return <CouponNew {...props} />;
@@ -41,8 +44,8 @@ export default function Coupon(props) {
 Coupon.propTypes = {
   imgUrl: PropTypes.string,
   productName: PropTypes.string.isRequired,
-  price: PropTypes.number,
-  originPrice: PropTypes.number,
+  price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  originPrice: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   expirationTimestamp: PropTypes.number,
   discountValue: PropTypes.number,
   discountType: PropTypes.oneOf(["value", "percentage"]),
@@ -54,6 +57,7 @@ Coupon.propTypes = {
   width: PropTypes.number,
   fullWidth: PropTypes.bool,
   layout: PropTypes.oneOf([0, 10, 11, 12, 20, 21, 22, 30, 31, 32, 40, 41, 42]),
+  shop: PropTypes.string,
 };
 
 Coupon.defaultProps = {
@@ -72,4 +76,5 @@ Coupon.defaultProps = {
   width: 0,
   fullWidth: false,
   layout: 40,
+  shop: "myshop.com",
 };
