@@ -341,7 +341,7 @@ export const CouponDiscountSection = ({
     }
   }, [discountType, discountValue]);
 
-  const bottomRight = layout % 20 >= 10;
+  const bottomRight = false; // layout % 20 >= 10; //TODO?
 
   return (
     <div
@@ -384,10 +384,11 @@ export const CouponDiscountSection = ({
             className="w-full text-center ax-center"
             style={{
               fontSize: "0.75em",
-              position: bottomRight ? "absolute" : "relative",
-              display: bottomRight ? "block" : "flex",
-              bottom: bottomRight ? "4px" : "auto",
-              right: bottomRight ? "12px" : "auto",
+              // TODO: test email QWQ?
+              // position: bottomRight ? "absolute" : "relative",
+              // display: bottomRight ? "block" : "flex",
+              // bottom: bottomRight ? "4px" : "auto",
+              // right: bottomRight ? "12px" : "auto",
             }}
           >
             {template ? EMAIL_TEMPLATE_EXPIRATION : formattedExpiration}
