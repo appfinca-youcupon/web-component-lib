@@ -47,7 +47,7 @@ Coupon.propTypes = {
   price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   originPrice: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   expirationTimestamp: PropTypes.number,
-  discountValue: PropTypes.number,
+  discountValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   discountType: PropTypes.oneOf(["value", "percentage"]),
   color: PropTypes.string,
   url: PropTypes.string,
