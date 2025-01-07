@@ -36,6 +36,7 @@ const couponProductInfoContainerStyle = {
 };
 
 const couponProductNameSpanStyle = {
+  color: "black",
   width: "100%",
   textAlign: "left",
   gap: "2px",
