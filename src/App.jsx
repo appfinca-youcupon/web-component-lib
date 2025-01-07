@@ -1,4 +1,3 @@
-import CouponLg from "./coupon/CouponLg";
 import Coupon from "./coupon/Coupon";
 import MailCoupon from "./coupon/MailCoupon";
 import CouponNew from "./coupon/CouponNew";
