@@ -20,6 +20,7 @@ const EMAIL_TEMPLATE_EXPIRATION =
 const DOLLAR_SIGN = "$";
 
 const couponProductInfoContainerStyle = {
+  color: "black",
   display: "flex",
   flexDirection: "column",
   flexGrow: 1,
@@ -36,7 +37,6 @@ const couponProductInfoContainerStyle = {
 };
 
 const couponProductNameSpanStyle = {
-  color: "black",
   width: "100%",
   textAlign: "left",
   gap: "2px",
