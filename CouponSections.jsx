@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import convert from "color-convert";
 import CouponConstants from "./data/coupon-constants.json";
 import { getSizeConstants } from "./utils/size";
+import { getIsLightColor } from "./utils/color";
 
 const EMAIL_TEMPLATE_PRODUCT_NAME =
   CouponConstants.emailCouponTemplate.productNameTemplate;
@@ -74,14 +75,6 @@ const couponDiscountInfoContainerStyle = {
   gap: "2px",
   paddingRight: "8px",
   paddingLeft: "4px",
-};
-
-const getIsLightColor = (color) => {
-  let hslColor = convert.hex.hsl(color);
-  if (hslColor) {
-    return hslColor[2] > 55 || false;
-  }
-  return false;
 };
 
 const getInfoTextColor = (color) => {
