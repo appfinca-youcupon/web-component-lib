@@ -13,6 +13,7 @@ export const dummyCouponData = {
   discountType: "percentage",
   discountValue: 5,
   signature: "signature",
+  appid: "appid",
 };
 
 /**
@@ -34,6 +35,7 @@ export const dummyCouponData = {
  *    layout: number,
  *    shop: string,
  *    signature: string,
+ *    appid: string,
  * }} props
  */
 
@@ -61,6 +63,7 @@ Coupon.propTypes = {
   layout: PropTypes.oneOf([0, 10, 11, 12, 20, 21, 22, 30, 31, 32, 40, 41, 42]),
   shop: PropTypes.string,
   signature: PropTypes.string,
+  appid: PropTypes.string,
 };
 
 Coupon.defaultProps = {
@@ -81,4 +84,5 @@ Coupon.defaultProps = {
   layout: 40,
   shop: "myshop.com",
   signature: "",
+  appid: "",
 };

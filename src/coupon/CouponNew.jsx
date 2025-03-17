@@ -124,6 +124,7 @@ const CouponRight = (props) => {
  *    layout: number,
  *    shop: string,
  *    signature: string,
+ *    appid: string,
  * }} props
  */
 export default function CouponNew(props) {

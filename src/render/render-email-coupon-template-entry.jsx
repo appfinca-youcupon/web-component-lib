@@ -10,6 +10,7 @@ export function render() {
 
 export function renderLarge() {
   return ReactDOMServer.renderToString(
-    <MailCouponTemplate discountValue={999999999} />, //> 4 digit
+    <MailCouponTemplate />,
+    // <MailCouponTemplate discountValue={999999999} />, //> 4 digit
   );
 }
