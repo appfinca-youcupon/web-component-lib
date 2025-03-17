@@ -10,6 +10,7 @@ import { getSizeConstants } from "./utils/size";
  *    size: ("sm"|"md"|"lg")
  *    url: string,
  *    signature: string,
+ *    appid: string,
  * }} props
  */
 export const CouponRootStyle = (props) => {
@@ -21,6 +22,7 @@ export const CouponRootStyle = (props) => {
     className = "",
     url = "",
     signature = "",
+    appid = "",
   } = props;
 
   const fontSize = size === "lg" ? "16px" : size === "md" ? "14px" : "10px";
@@ -66,6 +68,7 @@ export const CouponRootStyle = (props) => {
       url: props.url,
       shop: props.shop,
       signature: props.signature,
+      appid: props.appid,
     });
     return url + `?cupon=${encodeURIComponent(data)}`;
   }, [props]);

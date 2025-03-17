@@ -12,6 +12,7 @@ export const dummyCouponData = {
   discountType: "percentage",
   discountValue: 5,
   signature: "signature",
+  appid: "appid",
 };
 
 /**
@@ -29,6 +30,7 @@ export const dummyCouponData = {
  *    width: number,
  *    fullWidth: boolean,
  *    signature: string,
+ *    appid: string,
  * }} props
  */
 export default function MailCoupon(props) {
@@ -50,6 +52,7 @@ MailCoupon.propTypes = {
   width: PropTypes.number,
   fullWidth: PropTypes.bool,
   signature: PropTypes.string,
+  appid: PropTypes.string,
 };
 
 MailCoupon.defaultProps = {
@@ -65,4 +68,5 @@ MailCoupon.defaultProps = {
   width: 400,
   fullWidth: false,
   signature: "",
+  appid: "",
 };

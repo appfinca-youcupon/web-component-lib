@@ -149,6 +149,7 @@ const CouponRight = (props) => {
  *    width: number,
  *    fullWidth: boolean,
  *    signature: string,
+ *    appid: string,
  * }} props
  */
 
