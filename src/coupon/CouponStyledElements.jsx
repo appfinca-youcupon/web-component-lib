@@ -54,8 +54,20 @@ export const CouponRootStyle = (props) => {
   }, [url]);
 
   let urlWithData = useMemo(() => {
-    let data = JSON.stringify(props);
-    return url + `?cupon=${data}`;
+    let data = JSON.stringify({
+      imgUrl: props.imgUrl,
+      productName: props.productName,
+      price: props.price,
+      originPrice: props.originPrice,
+      expirationTimestamp: props.expirationTimestamp,
+      discountValue: props.discountValue,
+      discountType: props.discountType,
+      color: props.color,
+      url: props.url,
+      shop: props.shop,
+      signature: props.signature,
+    });
+    return url + `?cupon=${encodeURIComponent(data)}`;
   }, [props]);
 
   return (
