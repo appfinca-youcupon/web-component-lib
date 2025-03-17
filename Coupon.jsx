@@ -12,6 +12,7 @@ export const dummyCouponData = {
   expirationTimestamp: 0,
   discountType: "percentage",
   discountValue: 5,
+  signature: "signature",
 };
 
 /**
@@ -32,6 +33,7 @@ export const dummyCouponData = {
  *    fullWidth: boolean,
  *    layout: number,
  *    shop: string,
+ *    signature: string,
  * }} props
  */
 
@@ -58,6 +60,7 @@ Coupon.propTypes = {
   fullWidth: PropTypes.bool,
   layout: PropTypes.oneOf([0, 10, 11, 12, 20, 21, 22, 30, 31, 32, 40, 41, 42]),
   shop: PropTypes.string,
+  signature: PropTypes.string,
 };
 
 Coupon.defaultProps = {
@@ -77,4 +80,5 @@ Coupon.defaultProps = {
   fullWidth: false,
   layout: 40,
   shop: "myshop.com",
+  signature: "",
 };

@@ -9,6 +9,7 @@ import { getSizeConstants } from "./utils/size";
  *    fullWidth: boolean,
  *    size: ("sm"|"md"|"lg")
  *    url: string,
+ *    signature: string,
  * }} props
  */
 export const CouponRootStyle = (props) => {
@@ -19,6 +20,7 @@ export const CouponRootStyle = (props) => {
     style = {},
     className = "",
     url = "",
+    signature = "",
   } = props;
 
   const fontSize = size === "lg" ? "16px" : size === "md" ? "14px" : "10px";
@@ -51,12 +53,17 @@ export const CouponRootStyle = (props) => {
     return url?.length > 1; //TODO: validate url
   }, [url]);
 
+  let urlWithData = useMemo(() => {
+    let data = JSON.stringify(props);
+    return url + `?cupon=${data}`;
+  }, [props]);
+
   return (
     <div
       className={className}
       onClick={() => {
         if (clickable) {
-          window.open(url, "_blank").focus();
+          window.open(urlWithData, "_blank").focus();
         }
       }}
       style={{
