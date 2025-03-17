@@ -147,9 +147,11 @@ const CouponRight = (props) => {
  *    url: string,
  *    template: boolean,
  *    width: number,
- *    fullWidth: boolean
+ *    fullWidth: boolean,
+ *    signature: string,
  * }} props
  */
+
 export default function MailCouponLg(props) {
   // QWQ: email width?
   return (

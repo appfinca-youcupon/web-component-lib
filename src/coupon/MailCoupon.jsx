@@ -11,6 +11,7 @@ export const dummyCouponData = {
   expiration: "Oct 12, 2023",
   discountType: "percentage",
   discountValue: 5,
+  signature: "signature",
 };
 
 /**
@@ -26,7 +27,8 @@ export const dummyCouponData = {
  *    url: string,
  *    template: boolean,
  *    width: number,
- *    fullWidth: boolean
+ *    fullWidth: boolean,
+ *    signature: string,
  * }} props
  */
 export default function MailCoupon(props) {
@@ -47,6 +49,7 @@ MailCoupon.propTypes = {
   url: PropTypes.string,
   width: PropTypes.number,
   fullWidth: PropTypes.bool,
+  signature: PropTypes.string,
 };
 
 MailCoupon.defaultProps = {
@@ -61,4 +64,5 @@ MailCoupon.defaultProps = {
   url: "",
   width: 400,
   fullWidth: false,
+  signature: "",
 };

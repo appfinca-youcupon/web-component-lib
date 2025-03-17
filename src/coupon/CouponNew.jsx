@@ -122,7 +122,8 @@ const CouponRight = (props) => {
  *    width: number,
  *    fullWidth: boolean,
  *    layout: number,
- *    shop: string
+ *    shop: string,
+ *    signature: string,
  * }} props
  */
 export default function CouponNew(props) {
