@@ -300,14 +300,17 @@ export const CouponDiscountSection = ({
   expirationTimestamp,
   template,
   layout,
+  currencyCode = "USD",
 }) => {
   const { contentHeight, discountWidthMin } = useMemo(() => {
     return getSizeConstants(size);
   }, [size]);
 
   const formattedDiscount = useMemo(() => {
-    return `${discountValue}${discountType === "percentage" ? "%" : DOLLAR_SIGN}`;
-  }, [discountType, discountValue]);
+    return discountType === "percentage"
+      ? `${discountValue}%`
+      : `${DOLLAR_SIGN}${discountValue}`;
+  }, [discountType, discountValue, currencyCode]);
 
   const formattedExpiration = useMemo(() => {
     let formatted = dayjs(expirationTimestamp).format("MMM DD, YYYY");
@@ -365,12 +368,14 @@ export const CouponDiscountSection = ({
               // fontWeight: "500",
             }}
           >
+            <span style={{ fontSize: "0.75em" }}>USD</span>
             <span style={{ fontSize: isDiscountLong ? "1.25em" : "1.75em" }}>
               <strong>
                 {template ? EMAIL_TEMPLATE_DISCOUNT : formattedDiscount}
               </strong>
             </span>
             <span style={{ fontSize: "0.75em" }}>
+              {/* <strong>{`Off${discountType === "value" ? " (" + currencyCode + ")" : ""}`}</strong> */}
               <strong>Off</strong>
             </span>
           </div>
