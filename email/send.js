@@ -20,7 +20,6 @@ const couponsData = [
     price: 300,
     originPrice: 400,
     color: "#005090",
-    // expiration: "Oct 12, 2023", QWQ
     discountType: "percentage",
     discountValue: 5,
   },
@@ -31,7 +30,6 @@ const couponsData = [
     price: 300,
     originPrice: 400,
     color: "#005090",
-    // expiration: "Oct 12, 2023", QWQ
     discountType: "percentage",
     discountValue: 5,
   },
@@ -43,7 +41,6 @@ const couponsData = [
     price: 300,
     originPrice: 400,
     color: "#005090",
-    // expiration: "Oct 12, 2023", QWQ
     discountType: "percentage",
     discountValue: 5,
   },
@@ -75,7 +72,6 @@ const getComposedEmailHtml = async () => {
   );
   const coupons = await getComposedCouponsHtml();
   emailTemplate = emailTemplate.replace("{coupon}", coupons);
-  // await fs.writeFile("./outQWQ2.txt", emailTemplate);
   return emailTemplate;
 };
 

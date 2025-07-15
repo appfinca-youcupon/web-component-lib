@@ -154,7 +154,7 @@ const CouponRight = (props) => {
  */
 
 export default function MailCouponLg(props) {
-  // QWQ: email width?
+  // TODO: set email width
   return (
     <CouponRootStyle {...props} className="stack-row stack-ay-middle my-1">
       <CouponLeft {...props} size="lg" />

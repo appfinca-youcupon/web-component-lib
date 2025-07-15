@@ -249,7 +249,7 @@ export const CouponProductSection = (props) => {
               fontWeight: 500,
               ...couponProductNameSpanStyles[size],
               whiteSpace: template ? "wrap" : "normal",
-              display: template ? "block" : "-webkit-box", // QWQ
+              display: template ? "block" : "-webkit-box", // TODO: webkit support
             }}
           >
             {template ? EMAIL_TEMPLATE_PRODUCT_NAME : productName}
@@ -383,7 +383,7 @@ export const CouponDiscountSection = ({
             className="w-full text-center ax-center"
             style={{
               fontSize: "0.75em",
-              // TODO: test email QWQ?
+              // TODO: test display in email
               // position: bottomRight ? "absolute" : "relative",
               // display: bottomRight ? "block" : "flex",
               // bottom: bottomRight ? "4px" : "auto",
